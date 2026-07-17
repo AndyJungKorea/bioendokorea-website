@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세포치료 원자재 9단계 QC — 어떤 방식으로 조합해야 할까 | BIOENDO Korea</title>
+<meta name="description" content="CAR-T · AAV 등 CGT (Cell & Gene Therapy) 제조 공정의 9단계 QC 지점에서 endotoxin 시험 시약(Gel-clot · KC · rFC · rCR)을 조합하는 실무 전략.">
+<meta name="keywords" content="CGT, CAR-T, AAV, 세포치료, 9단계 QC, rFC, KC, Gel-clot, Master Cell Bank, BDS, DP, batch release">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--ink-1:#0A0F1E;--ink-3:#3E4A66;--ink-4:#6B7690;--line-1:#E8ECF4;--bg-2:#FAFBFD;--bg-3:#F1F4F9;--brand-1:#1E5AFF;--accent-1:#0EA5A5;--accent-2:#F4B740;--success:#10B981}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',-apple-system,'Pretendard',sans-serif;color:var(--ink-1);line-height:1.7;background:#fff;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-1);z-index:100}
+header .wrap{max-width:1360px;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand svg{width:40px;height:40px}
+.brand-txt{display:flex;flex-direction:column;line-height:1.1}
+.brand-txt .n{font-family:Inter,sans-serif;font-weight:800;font-size:19px;letter-spacing:.02em;color:var(--brand-1)}
+.brand-txt .n .a{color:var(--accent-1)}
+.brand-txt .s{font-size:11.5px;color:var(--ink-4);margin-top:3px;letter-spacing:.02em}
+.nav{margin-left:auto;display:flex;align-items:center;gap:28px}
+.nav a{color:var(--ink-3);font-weight:500;font-size:15px;text-decoration:none;transition:color .15s}
+.nav a:hover{color:var(--brand-1)}
+.nav .cta{background:var(--ink-1);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600;font-size:14px}
+.nav .cta:hover{background:var(--brand-1);color:#fff}
+@media(max-width:940px){.nav a:not(.cta){display:none}.brand-txt .s{display:none}}
+article.insight{padding:60px 0 40px}
+.crumb{display:inline-flex;align-items:center;gap:6px;color:var(--brand-1);font-size:14px;font-weight:600;text-decoration:none;margin-bottom:24px}
+.crumb:hover{gap:10px}
+.meta{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:13px;color:var(--ink-4)}
+.meta .cat{background:var(--bg-3);color:var(--brand-1);padding:5px 12px;border-radius:20px;font-weight:700;font-size:11.5px;letter-spacing:.02em}
+h1{font-family:Inter,'Noto Sans KR',sans-serif;font-size:clamp(28px,4.5vw,42px);font-weight:800;line-height:1.25;letter-spacing:-.02em;margin-bottom:20px;color:var(--ink-1)}
+.lead{font-size:18px;color:var(--ink-3);line-height:1.7;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line-1)}
+.hero-img{margin:32px 0;border-radius:20px;overflow:hidden;box-shadow:0 20px 48px rgba(10,15,30,.08)}
+.hero-img img{width:100%;height:auto;display:block}
+.body h2{font-family:Inter,'Noto Sans KR',sans-serif;font-size:clamp(20px,3vw,26px);font-weight:800;margin:44px 0 16px;color:var(--ink-1);letter-spacing:-.01em}
+.body h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:var(--ink-1)}
+.body p{margin-bottom:16px;color:var(--ink-3);font-size:16px}
+.body ul,.body ol{margin:0 0 20px 22px;color:var(--ink-3)}
+.body li{margin-bottom:8px;font-size:16px}
+.body strong{color:var(--ink-1);font-weight:700}
+.body a{color:var(--brand-1);text-decoration:underline;text-underline-offset:3px}
+.body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;box-shadow:0 4px 12px rgba(10,15,30,.06);border-radius:12px;overflow:hidden}
+.body table thead th{background:var(--ink-1);color:#fff;padding:14px 16px;text-align:left;font-weight:700;font-size:13px;letter-spacing:.01em}
+.body table tbody td{padding:12px 16px;border-bottom:1px solid var(--line-1);color:var(--ink-3)}
+.body table tbody tr:nth-child(even){background:var(--bg-2)}
+.body table tbody td:first-child{color:var(--ink-1);font-weight:600}
+.callout{background:linear-gradient(135deg,#F1F4F9,#FAFBFD);border-left:4px solid var(--brand-1);padding:22px 26px;border-radius:0 14px 14px 0;margin:28px 0}
+.callout strong{color:var(--brand-1);display:block;margin-bottom:8px;font-size:14px;letter-spacing:.02em;text-transform:uppercase}
+.related{margin:48px 0 32px;padding:28px;background:var(--bg-2);border-radius:16px;border:1px solid var(--line-1)}
+.related h3{font-family:Inter,sans-serif;font-size:13px;font-weight:800;color:var(--brand-1);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.related ul{list-style:none;margin:0}
+.related li{margin-bottom:10px;padding-left:18px;position:relative;font-size:15px}
+.related li::before{content:'→';position:absolute;left:0;color:var(--brand-1);font-weight:700}
+.related a{color:var(--ink-1);text-decoration:none;font-weight:600}
+.related a:hover{color:var(--brand-1)}
+.cta-banner{background:linear-gradient(135deg,var(--ink-1),#1a2138);padding:80px 0;margin-top:40px;color:#fff;text-align:center}
+.cta-banner .eyebrow{font-family:Inter,sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent-2);text-transform:uppercase;margin-bottom:14px;display:block}
+.cta-banner h2{font-family:Inter,'Noto Sans KR',sans-serif;font-size:clamp(24px,4vw,34px);font-weight:800;margin-bottom:16px;color:#fff}
+.cta-banner p{color:#B4BCD1;font-size:15.5px;margin-bottom:28px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7}
+.cta-banner .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:12px;font-weight:700;font-size:14.5px;text-decoration:none;transition:transform .15s,box-shadow .15s;min-height:48px}
+.btn-white{background:#fff;color:var(--ink-1)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,255,255,.2)}
+.btn-outline-w{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-outline-w:hover{background:rgba(255,255,255,.1)}
+footer{background:var(--ink-1);color:#B4BCD1;padding:48px 0 32px;font-size:13.5px}
+footer .wrap{max-width:1360px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand h4{color:#fff;font-family:Inter,sans-serif;font-weight:800;font-size:16px;margin-bottom:10px}
+.foot-brand p{line-height:1.7;margin-bottom:8px}
+.foot-col h5{color:#fff;font-family:Inter,sans-serif;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.foot-col a{display:block;color:#B4BCD1;text-decoration:none;padding:5px 0;font-size:13.5px}
+.foot-col a:hover{color:#fff}
+.foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#6B7690;font-size:12.5px}
+@media(max-width:940px){.foot-top{grid-template-columns:1fr;gap:28px}article.insight{padding:40px 0 20px}.cta-banner{padding:60px 0}}
+@media(max-width:600px){.wrap{padding:0 18px}.body table{font-size:13px}.body table thead th,.body table tbody td{padding:10px 12px}.cta-banner .row .btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 84 84" aria-hidden="true"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1E5AFF"/><stop offset="100%" stop-color="#0EA5A5"/></linearGradient></defs><rect width="84" height="84" rx="18" fill="url(#hg)"/><circle cx="42" cy="24" r="8" fill="#fff"/><circle cx="26" cy="51" r="8" fill="#fff"/><circle cx="58" cy="51" r="8" fill="#fff"/><path d="M42,24 L26,51 M42,24 L58,51 M26,51 L58,51" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".78"/><circle cx="42" cy="42" r="3.5" fill="#F4B740"/></svg>
+      <span class="brand-txt"><span class="n">GLOBAL <span class="a">BIOTECH</span></span><span class="s">BIOENDO Korea · 한국 총판 대리점</span></span>
+    </a>
+    <nav class="nav">
+      <a href="/">홈</a>
+      <a href="/about.html">회사소개</a>
+      <a href="/#products">제품</a>
+      <a href="/#insights">인사이트</a>
+      <a href="/inquiry.html" class="cta">견적 문의 →</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="insight">
+  <div class="wrap">
+    <a class="crumb" href="/#insights">← 인사이트 목록</a>
+    <div class="meta">
+      <span class="cat">사례 분석</span>
+      <time datetime="2026-05-30">2026.05.30</time>
+      <span>· 8분 읽기</span>
+    </div>
+    <h1>세포치료 원자재 9단계 QC — 어떤 방식으로 조합해야 할까</h1>
+    <p class="lead">CAR-T · AAV 등 CGT (Cell &amp; Gene Therapy) 제품은 원자재부터 완제품 릴리즈까지 <strong>9단계</strong>에서 endotoxin 시험이 필요합니다. 각 단계 특성에 맞춘 시약 조합이 QC 효율과 신뢰성을 결정합니다.</p>
+
+    <div class="hero-img"><img src="https://cdn.globalso.com/bioendo/6b5c49db3.jpg" alt="세포치료 CGT 9단계 QC"></div>
+
+    <div class="body">
+      <h2>CGT QC의 3가지 특성</h2>
+      <ul>
+        <li><strong>살아있는 원료</strong> — 세포 · 바이러스 벡터 · 배지 함유물 다양</li>
+        <li><strong>작은 배치 크기</strong> — 환자 맞춤 · 반복 시험 여유 낮음</li>
+        <li><strong>신속 릴리즈 압박</strong> — 자가 CAR-T는 채취~투여 2~3주 내</li>
+      </ul>
+      <p>Endotoxin 허용 한계는 제품 형태에 따라 <strong>0.2 EU/mL (정맥 주입) 또는 0.5 EU/mL (일반)</strong> 이하로 낮게 설정됩니다. 각 QC 지점에서 방식 · 감도 · 시간 · 비용의 균형이 필요합니다.</p>
+
+      <h2>9단계 QC 지점 매트릭스</h2>
+      <table>
+        <thead><tr><th>#</th><th>단계</th><th>대표 시료</th><th>권장 방식</th><th>감도</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>원자재 (Raw Materials)</td><td>배지 · 완충액 · 시약</td><td>Gel-clot · KC</td><td>0.03 EU/mL</td></tr>
+          <tr><td>2</td><td>Master Cell Bank</td><td>MCB · WCB</td><td>KC</td><td>0.005 EU/mL</td></tr>
+          <tr><td>3</td><td>Viral Vector 생산</td><td>Lentiviral · AAV</td><td>KC · rFC</td><td>0.005 EU/mL</td></tr>
+          <tr><td>4</td><td>Harvested Bulk</td><td>배양 harvest</td><td>KC</td><td>0.005 EU/mL</td></tr>
+          <tr><td>5</td><td>정제 In-process</td><td>Chromatography IP</td><td><strong>rFC</strong></td><td>0.005 EU/mL</td></tr>
+          <tr><td>6</td><td>최종 정제 (Final Purified)</td><td>Concentrated</td><td>KC · rCR</td><td>0.001 EU/mL</td></tr>
+          <tr><td>7</td><td>원액 (BDS)</td><td>Bulk Drug Substance</td><td><strong>rCR</strong></td><td>0.001 EU/mL</td></tr>
+          <tr><td>8</td><td>완제품 (DP)</td><td>Drug Product</td><td>KC</td><td>0.005 EU/mL</td></tr>
+          <tr><td>9</td><td>Batch Release</td><td>Final QC · Retention</td><td>KC (검증법)</td><td>0.005 EU/mL</td></tr>
+        </tbody>
+      </table>
+
+      <h2>실무 조합 전략 (3-Layer 접근)</h2>
+
+      <h3>Layer 1 · 원자재 (Step 1~4)</h3>
+      <p><strong>Gel-clot 또는 KC 조합</strong>이 최적입니다. 시료 부피 여유 · 예산 · 대량 QC 흐름에 유리합니다.</p>
+      <ul>
+        <li>Gel-clot: 정성 판정 · 인큐베이터만으로 · 저비용</li>
+        <li>KC: 정량 결과 · Lot 별 통계 관리 · 트렌드 확인</li>
+      </ul>
+
+      <h3>Layer 2 · 정제 · 원액 (Step 5~7)</h3>
+      <p><strong>rFC / rCR 조합</strong>이 유리합니다. β-glucan · 세척액 잔류물 등 <strong>간섭 물질 영향 최소화</strong>가 핵심입니다.</p>
+      <ul>
+        <li>rFC: 형광 판독 · Ex 380 / Em 440 nm · β-glucan 간섭 없음</li>
+        <li>rCR: 기존 KC 리더 그대로 · 초저농도 감도 0.001 EU/mL</li>
+      </ul>
+
+      <h3>Layer 3 · 완제품 · 릴리즈 (Step 8~9)</h3>
+      <p><strong>KC (Kinetic Chromogenic)</strong>가 표준입니다. 규제 검증 완료 · reference 데이터 축적이 풍부하며 batch release 문서화 부담이 낮습니다.</p>
+      <ul>
+        <li>KC (Kinetic Chromogenic): USP · EP · KP · JP 4대 약전 완전 대응</li>
+        <li>Retention sample도 KC 표준법으로 (재검증 편의)</li>
+      </ul>
+
+      <div class="callout">
+        <strong>왜 rFC/rCR을 원자재에 안 쓰나</strong>
+        재조합 시약은 감도 · 간섭 특성이 뛰어나지만 <strong>단가가 KC의 2~3배</strong>입니다. 원자재 · in-process는 KC · Gel-clot로 대량 처리하고, 결정적 지점 (정제 후 · 최종 릴리즈)에 재조합을 배치하는 것이 QC 예산·품질 균형에 유리합니다.
+      </div>
+
+      <h2>BIOENDO CGT 시약 조합 예시</h2>
+      <table>
+        <thead><tr><th>Layer</th><th>추천 조합</th><th>월 사용량 예상</th></tr></thead>
+        <tbody>
+          <tr><td>Layer 1 (원자재)</td><td>Gel-clot GC 20종 + KC0828 (208 tests)</td><td>200~400 tests</td></tr>
+          <tr><td>Layer 2 (정제·원액)</td><td>RFC96TS + RCR0428S</td><td>50~100 tests</td></tr>
+          <tr><td>Layer 3 (완제품·릴리즈)</td><td>KC0828 표준 + Water for BET (TRW)</td><td>30~60 tests</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>1일 대응 예시</strong>
+        1 batch (10~30 vials) 릴리즈 기준 · KC + Retention 24 tests + rFC in-process 12 tests + Gel-clot 원자재 8 tests = 총 <strong>44 tests / batch</strong>. 월 4~6 batch 기준 200~300 tests 규모로 예산 산정.
+      </div>
+    </div>
+
+    <div class="related">
+      <h3>관련 제품 · 자료</h3>
+      <ul>
+        <li><a href="/product-gc.html">Gel-clot Assay Kit (GC 20종)</a></li>
+        <li><a href="/product-kc.html">KC0828 · Kinetic Chromogenic</a></li>
+        <li><a href="/product-rfc.html">Recombinant Factor C (rFC)</a></li>
+        <li><a href="/product-rcr.html">Recombinant Cascade Reagent (rCR)</a></li>
+        <li><a href="/inquiry.html">CGT 시약 조합 상담 요청</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <span class="eyebrow">Get Started</span>
+    <h2>CGT QC 시약 조합 상담</h2>
+    <p>제품 종류 · 월 batch 수 · 사용 장비를 알려주시면 9단계 QC에 맞춘 시약 조합 견적을 회신드립니다.</p>
+    <div class="row">
+      <a class="btn btn-white" href="/inquiry.html">CGT 시약 상담</a>
+      <a class="btn btn-outline-w" href="tel:0224064387">02-406-4387</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <h4>GLOBAL BIOTECH</h4>
+        <p>BIOENDO 엔도톡신 시약의 한국 총판 대리점.<br>USP · EP · KP · JP 규격 준수 · CoA · MSDS · package insert 제공.</p>
+        <p style="margin-top:14px;font-size:12.5px;color:#6B7690">서울 금천구 SK V1 A동 1407호<br>Tel. 02-406-4387 · sales@chcrmkorea.com</p>
+      </div>
+      <div class="foot-col">
+        <h5>제품</h5>
+        <a href="/product-kc.html">KC0828</a>
+        <a href="/product-kt.html">KT 시리즈</a>
+        <a href="/product-ec.html">EC64405</a>
+        <a href="/product-gc.html">Gel-clot</a>
+        <a href="/product-rfc.html">rFC</a>
+        <a href="/product-rcr.html">rCR</a>
+      </div>
+      <div class="foot-col">
+        <h5>회사</h5>
+        <a href="/about.html">회사소개</a>
+        <a href="/#applications">응용분야</a>
+        <a href="/#insights">인사이트</a>
+        <a href="/inquiry.html">견적 문의</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Global Biotech Co., Ltd. · BIOENDO Korea</span>
+      <span>사업자 660-30-00866 · 대표 정기운</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
