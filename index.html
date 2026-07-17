@@ -633,7 +633,7 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
 .mobile-drawer a{display:block;padding:12px 14px;color:var(--ink-1);font-weight:500;font-size:15px;
   border-radius:10px;text-decoration:none;transition:background .12s}
 .mobile-drawer a:hover{background:var(--bg-3)}
-.mobile-drawer .m-desc{display:block;font-size:12px;color:var(--ink-4);margin-top:2px;font-weight:400}
+.mobile-drawer .m-desc{display:block;font-size:12px;color:var(--ink-4);margin-top:2px;font-weight:400}.mobile-drawer a > *{pointer-events:none}
 .mobile-drawer .m-cta{display:block;margin-top:16px;padding:14px 20px;background:var(--ink-1);color:#fff;
   border-radius:12px;text-align:center;font-weight:700;text-decoration:none}
 .drawer-backdrop{display:none;position:fixed;inset:0;background:rgba(10,15,30,.45);z-index:999;
@@ -756,18 +756,18 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
 </div>
 <div class="m-section">
 <h4>제품</h4>
-<a href="/product-kc.html">속도론적 비색법 (KC) <span class="m-desc">KC0828 · 8종 라인업</span></a>
-<a href="/product-kt.html">속도론적 비탁법 (KT) <span class="m-desc">KT17·KT52</span></a>
-<a href="/product-ec.html">종말점 비색법 (EC) <span class="m-desc">EC64405</span></a>
-<a href="/product-gc.html">겔화법 (Gel-clot) <span class="m-desc">GC 20종</span></a>
-<a href="/product-rfc.html">재조합 인자 C (rFC) <span class="m-desc">RFC96TS</span></a>
-<a href="/product-rcr.html">재조합 캐스케이드 (rCR) <span class="m-desc">RCR0428S</span></a>
+<a href="/product-kc.html" onclick="closeMenu()">속도론적 비색법 (KC) <span class="m-desc">KC0828 · 8종 라인업</span></a>
+<a href="/product-kt.html" onclick="closeMenu()">속도론적 비탁법 (KT) <span class="m-desc">KT17·KT52</span></a>
+<a href="/product-ec.html" onclick="closeMenu()">종말점 비색법 (EC) <span class="m-desc">EC64405</span></a>
+<a href="/product-gc.html" onclick="closeMenu()">겔화법 (Gel-clot) <span class="m-desc">GC 20종</span></a>
+<a href="/product-rfc.html" onclick="closeMenu()">재조합 인자 C (rFC) <span class="m-desc">RFC96TS</span></a>
+<a href="/product-rcr.html" onclick="closeMenu()">재조합 캐스케이드 (rCR) <span class="m-desc">RCR0428S</span></a>
 </div>
 <div class="m-section">
 <h4>회사</h4>
-<a href="/about.html">회사소개</a>
-<a href="#applications">응용분야</a>
-<a href="#insights">인사이트</a>
+<a href="/about.html" onclick="closeMenu()">회사소개</a>
+<a href="/#applications" onclick="closeMenu()">응용분야</a>
+<a href="/#insights" onclick="closeMenu()">인사이트</a>
 </div>
 <a class="m-cta" href="/inquiry.html">견적 문의 →</a>
 </aside>
@@ -1326,6 +1326,12 @@ document.addEventListener('click', function(e){
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 })();
 
+
+function closeMenu(){
+var b=document.getElementById('mbtn');var d=document.getElementById('mdrw');var bd=document.getElementById('mbd');
+if(!d)return;d.classList.remove('open');if(bd)bd.classList.remove('open');if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false')}
+document.body.classList.remove('nav-open');
+}
 function toggleMenu(){
 var b=document.getElementById('mbtn');var d=document.getElementById('mdrw');var bd=document.getElementById('mbd');
 var open=d.classList.contains('open');
