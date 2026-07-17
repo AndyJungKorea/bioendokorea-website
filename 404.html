@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>페이지를 찾을 수 없습니다 · BIOENDO Korea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800&family=Inter:wght@600;800&display=swap">
+<style>
+:root {
+  --nav-blue:#143A6B; --brand-blue:#1F4E9C; --accent-blue:#2A79D6; --sky:#78D5FF;
+  --ink:#1B2432; --ink-soft:#4B5768; --line:#E4E8EF; --bg:#F6F8FB;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh;
+  font-family: "Noto Sans KR","Malgun Gothic",sans-serif;
+  color: var(--ink); background: linear-gradient(135deg, var(--nav-blue), var(--brand-blue));
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.wrap {
+  max-width: 640px; width: 100%; text-align: center; color: #fff;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22);
+  border-radius: 20px; padding: 56px 40px; backdrop-filter: blur(10px);
+}
+.code {
+  font-family: Inter, sans-serif; font-weight: 800; font-size: 96px;
+  color: var(--sky); letter-spacing: -3px; line-height: 1; margin: 0 0 12px;
+  text-shadow: 0 6px 30px rgba(0,0,0,.35);
+}
+h1 { font-size: 26px; margin: 0 0 12px; font-weight: 800; letter-spacing: -.3px; }
+p { color: #DCE7F6; font-size: 15.5px; line-height: 1.7; margin: 0 0 28px; }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: 12px; font-weight: 700; font-size: 15px;
+  text-decoration: none; transition: transform .18s, background .18s;
+}
+.btn-primary { background: #fff; color: var(--brand-blue); }
+.btn-primary:hover { background: #EAF4FF; transform: translateY(-1px); }
+.btn-outline { border: 2px solid rgba(255,255,255,.55); color: #fff; }
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.13); }
+.foot { margin-top: 32px; font-size: 12.5px; color: #A6C4EF; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="code">404</div>
+  <h1>요청하신 페이지를 찾을 수 없습니다</h1>
+  <p>페이지가 이동되었거나 삭제되었을 수 있습니다.<br>
+  아래에서 원하시는 정보를 이어가실 수 있습니다.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="/">홈으로 →</a>
+    <a class="btn btn-outline" href="/inquiry.html">문의하기</a>
+  </div>
+  <div class="foot">BIOENDO Korea · 글로벌바이오테크 (본사 공식 대리점)</div>
+</div>
+</body>
+</html>

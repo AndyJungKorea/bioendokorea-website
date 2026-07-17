@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84" role="img" aria-label="Global Biotech mark">
+  <defs>
+    <linearGradient id="markGradA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E5AFF"/>
+      <stop offset="100%" stop-color="#0EA5A5"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(6,4)">
+    <circle cx="38" cy="38" r="36" fill="url(#markGradA)"/>
+    <circle cx="38" cy="38" r="30" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+    <circle cx="38" cy="20" r="7" fill="#ffffff"/>
+    <circle cx="22" cy="47" r="7" fill="#ffffff"/>
+    <circle cx="54" cy="47" r="7" fill="#ffffff"/>
+    <path d="M38,20 L22,47 M38,20 L54,47 M22,47 L54,47" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity=".72"/>
+    <circle cx="38" cy="38" r="3" fill="#F4B740"/>
+  </g>
+</svg>

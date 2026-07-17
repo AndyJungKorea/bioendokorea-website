@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 84" role="img" aria-label="Global Biotech (white)">
+  <defs>
+    <style>
+      .wm-p-w  { font-family: Inter, "Pretendard", sans-serif; font-weight: 800; fill: #FFFFFF; letter-spacing: -0.02em; }
+      .wm-s-w  { font-family: Inter, "Pretendard", sans-serif; font-weight: 600; fill: rgba(255,255,255,.60); letter-spacing: 0.14em; text-transform: uppercase; }
+    </style>
+  </defs>
+  <g transform="translate(6,4)">
+    <circle cx="38" cy="38" r="36" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.42)" stroke-width="1"/>
+    <circle cx="38" cy="20" r="7" fill="#ffffff"/>
+    <circle cx="22" cy="47" r="7" fill="#ffffff"/>
+    <circle cx="54" cy="47" r="7" fill="#ffffff"/>
+    <path d="M38,20 L22,47 M38,20 L54,47 M22,47 L54,47" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity=".82"/>
+    <circle cx="38" cy="38" r="3" fill="#F4B740"/>
+  </g>
+  <g transform="translate(96, 0)">
+    <text x="0" y="42" class="wm-p-w" font-size="32">Global<tspan fill="#78ADFF">Biotech</tspan></text>
+    <text x="0" y="66" class="wm-s-w" font-size="10">Endotoxin Testing · Bioendo Korea</text>
+  </g>
+</svg>

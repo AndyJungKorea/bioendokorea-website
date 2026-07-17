@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<title>견적·평가용 시약 문의 | BIOENDO Korea</title>
+<meta name="description" content="BIOENDO 엔도톡신 시험(BET) 시약 견적 · 평가용 시약 · 기술 문의. 보유 장비와 시험 목적을 알려주시면 담당자가 24시간 이내 회신드립니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Inter:wght@400;600;700;800&display=swap">
+<style>
+:root {
+  --nav-blue: #143A6B;
+  --brand-blue: #1F4E9C;
+  --accent-blue: #2A79D6;
+  --sky: #78D5FF;
+  --mint: #2AB090;
+  --gold: #E8B23A;
+  --deep: #0A1F3D;
+  --ink: #1B2432;
+  --ink-soft: #4B5768;
+  --muted: #7A8494;
+  --line: #E4E8EF;
+  --bg: #F6F8FB;
+  --focus: #FFB300;
+  --error: #D64545;
+  --radius: 12px;
+  --shadow-1: 0 2px 6px rgba(20,58,107,.06);
+  --shadow-2: 0 12px 32px rgba(20,58,107,.14);
+  --container: 1240px;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif; color: var(--ink); background: #fff; line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--brand-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font-family: inherit; cursor: pointer; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 16px; font-weight: 700; border-radius: 6px; z-index: 999; }
+.skip:focus { left: 8px; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+/* Utility bar */
+.util-bar { background: var(--deep); color: #cfe0f5; font-size: 13px; }
+.util-bar .container { display: flex; align-items: center; justify-content: space-between; min-height: 38px; gap: 16px; flex-wrap: wrap; }
+.util-left, .util-right { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.util-bar a { color: #cfe0f5; }
+.util-bar strong { color: #fff; }
+.util-partner { display: inline-flex; align-items: center; gap: 8px; }
+.util-partner img { height: 16px; }
+
+/* Header */
+.header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 500; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand img.logo { height: 48px; width: auto; }
+.brand-txt { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-title { font-family: Inter,"Noto Sans KR",sans-serif; font-weight: 800; color: var(--nav-blue); font-size: 22px; letter-spacing: .3px; }
+.brand-sub { font-size: 12.5px; color: var(--ink-soft); font-weight: 500; }
+nav.primary ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; justify-content: flex-end; align-items: center; }
+nav.primary a { color: var(--ink); font-weight: 600; font-size: 15px; padding: 10px 4px; border-bottom: 3px solid transparent; transition: border-color .15s, color .15s; }
+nav.primary a:hover, nav.primary a[aria-current="page"] { color: var(--brand-blue); border-color: var(--brand-blue); text-decoration: none; }
+
+/* Breadcrumb */
+.crumb { background: var(--bg); padding: 14px 0; font-size: 13.5px; border-bottom: 1px solid var(--line); }
+.crumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.crumb li { color: var(--ink-soft); }
+.crumb li + li::before { content: "›"; color: var(--muted); margin-right: 6px; }
+.crumb a { color: var(--ink-soft); }
+.crumb li[aria-current="page"] { color: var(--nav-blue); font-weight: 700; }
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, var(--deep) 0%, var(--nav-blue) 55%, var(--brand-blue) 100%);
+  color: #fff; padding: 70px 0 90px;
+}
+.page-hero .eyebrow { text-align: center; font-size: 13px; font-weight: 800; color: var(--sky); letter-spacing: 2px; text-transform: uppercase; margin: 0 0 10px; }
+.page-hero h1 { text-align: center; font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; margin: 0 0 14px; letter-spacing: -.3px; }
+.page-hero p { text-align: center; color: #DCE7F6; max-width: 640px; margin: 0 auto; font-size: 16px; }
+.hero-meta { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+.hero-meta div { text-align: center; }
+.hero-meta .n { font-family: Inter, sans-serif; font-weight: 800; font-size: 22px; color: #fff; }
+.hero-meta .l { font-size: 12.5px; color: #A6C4EF; font-weight: 600; margin-top: 2px; }
+
+/* Contact grid */
+.contact-section { padding: 80px 0; background: var(--bg); }
+.contact-grid { display: grid; grid-template-columns: 1.4fr .95fr; gap: 40px; align-items: start; }
+
+/* Form card */
+.form-card {
+  background: #fff; border-radius: 16px; padding: 40px 44px;
+  box-shadow: var(--shadow-2); border: 1px solid var(--line);
+}
+.form-card h2 { margin: 0 0 8px; color: var(--nav-blue); font-size: 22px; font-weight: 800; letter-spacing: -.2px; }
+.form-card p.form-lead { margin: 0 0 28px; color: var(--ink-soft); font-size: 14.5px; }
+
+.form-group { margin-bottom: 22px; }
+.form-group label {
+  display: block; font-size: 13.5px; font-weight: 700; color: var(--ink);
+  margin-bottom: 8px; letter-spacing: .1px;
+}
+.form-group label .req { color: var(--error); font-weight: 800; margin-left: 3px; }
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group input[type=tel],
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--line); border-radius: 8px;
+  font-family: inherit; font-size: 15px; color: var(--ink);
+  background: #fff; transition: border-color .15s, box-shadow .15s;
+}
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover { border-color: #BCCFE7; }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--brand-blue); box-shadow: 0 0 0 3px rgba(31,78,156,.12); outline: none; }
+.form-group textarea { min-height: 130px; resize: vertical; line-height: 1.5; }
+.form-group .hint { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea { border-color: var(--error); }
+.form-group .err-msg { display: none; margin-top: 6px; font-size: 12.5px; color: var(--error); font-weight: 600; }
+.form-group.error .err-msg { display: block; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Checkbox */
+.checkbox-group {
+  padding: 16px 18px; background: var(--bg); border-radius: 10px;
+  border: 1px solid var(--line); margin-bottom: 22px;
+}
+.checkbox-row { display: flex; gap: 12px; align-items: flex-start; }
+.checkbox-row input[type=checkbox] {
+  width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0;
+  accent-color: var(--brand-blue);
+}
+.checkbox-row label { margin: 0; font-weight: 500; font-size: 13.5px; color: var(--ink); line-height: 1.5; }
+.checkbox-row label a { color: var(--brand-blue); font-weight: 700; }
+
+/* Submit */
+.submit-btn {
+  width: 100%; padding: 16px 20px; border: 0; border-radius: 10px;
+  background: var(--brand-blue); color: #fff; font-weight: 800; font-size: 16px;
+  transition: background .15s, transform .15s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+}
+.submit-btn:hover { background: var(--nav-blue); transform: translateY(-1px); }
+.submit-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+.submit-hint { text-align: center; font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+/* Success state */
+.success-card {
+  background: #EAF7F1; border: 2px solid var(--mint); border-radius: 16px;
+  padding: 44px 40px; text-align: center; display: none;
+}
+.success-card.show { display: block; }
+.success-icon {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--mint); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 40px; font-weight: 800; margin-bottom: 20px;
+}
+.success-card h2 { color: var(--nav-blue); font-size: 24px; margin: 0 0 12px; }
+.success-card p { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+.success-card .action-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.action-btn {
+  padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 14px;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: background .15s;
+}
+.action-btn-primary { background: var(--brand-blue); color: #fff; }
+.action-btn-primary:hover { background: var(--nav-blue); text-decoration: none; }
+.action-btn-outline { border: 2px solid var(--brand-blue); color: var(--brand-blue); }
+.action-btn-outline:hover { background: #EAF3FF; text-decoration: none; }
+
+/* Sidebar contact info */
+.contact-info {
+  background: #fff; border-radius: 16px; padding: 32px;
+  border: 1px solid var(--line); box-shadow: var(--shadow-1);
+}
+.contact-info h3 { margin: 0 0 20px; color: var(--nav-blue); font-size: 18px; font-weight: 800; }
+.info-row { padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; }
+.info-row:last-child { border-bottom: 0; }
+.info-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: #EAF3FF; color: var(--brand-blue);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.info-content { flex: 1; }
+.info-label { font-size: 11.5px; color: var(--muted); font-weight: 700; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 2px; }
+.info-value { font-size: 14.5px; color: var(--ink); font-weight: 600; line-height: 1.5; }
+.info-value a { color: var(--ink); }
+.info-value a:hover { color: var(--brand-blue); text-decoration: underline; }
+
+.hours-card {
+  margin-top: 20px; padding: 20px 24px; background: linear-gradient(135deg, var(--nav-blue), var(--brand-blue)); color: #fff; border-radius: 12px;
+}
+.hours-card h4 { margin: 0 0 8px; font-size: 14px; letter-spacing: .3px; }
+.hours-card p { margin: 0; font-size: 13px; color: #DCE7F6; }
+
+/* Footer */
+footer { background: var(--deep); color: #cfe0f5; padding: 60px 0 22px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.15); }
+footer h4 { color: #fff; font-size: 15px; margin: 0 0 16px; }
+footer p, footer li { font-size: 13.5px; line-height: 1.7; margin: 0; }
+footer ul { list-style: none; padding: 0; margin: 0; }
+footer a { color: #cfe0f5; }
+footer a:hover { color: #fff; }
+.foot-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.foot-brand-row img { height: 38px; width: auto; filter: brightness(1.5); }
+.foot-brand-title { color: #fff; font-weight: 800; font-size: 18px; font-family: Inter, sans-serif; }
+.foot-brand-sub { font-size: 12px; color: #A6C4EF; }
+.copy { padding-top: 22px; text-align: center; font-size: 12px; color: #8AA4C9; }
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  nav.primary ul { display: none; }
+}
+@media (max-width: 640px) {
+  .form-card { padding: 28px 22px; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-meta { gap: 20px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .brand-sub { display: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#contact-form" class="skip">문의 폼 바로가기</a>
+
+<!-- Utility bar -->
+<div class="util-bar">
+  <div class="container">
+    <div class="util-left">
+      <span class="util-partner">
+        <img src="/images/logo-gb-v2.png" style="height:22px;width:auto;" alt="글로벌바이오테크">
+        <span><strong>글로벌바이오테크</strong> — BIOENDO 한국 총판 대리점</span>
+      </span>
+    </div>
+    <div class="util-right">
+      <a href="tel:0224064387">📞 02-406-4387</a>
+      <a href="mailto:sales@chcrmkorea.com">✉ sales@chcrmkorea.com</a>
+      <a href="https://www.bioendo.com/" rel="external" target="_blank">BIOENDO 홈 ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="BIOENDO Korea 홈으로">
+      <img class="logo" src="/images/logo-bioendo.png" alt="BIOENDO 로고">
+      <span class="brand-txt">
+        <span class="brand-title" style="color:#1E5AFF;letter-spacing:.02em;">GLOBAL <span style="color:#0EA5A5;">BIOTECH</span></span>
+        <span class="brand-sub">BIOENDO Korea · 한국 총판 대리점</span>
+      </span>
+    </a>
+    <nav class="primary" aria-label="주 메뉴">
+      <ul>
+        <li><a href="./index.html">홈</a></li>
+        <li><a href="/about.html">회사소개</a></li>
+        <li><a href="./index.html#products">제품</a></li>
+        <li><a href="./index.html#applications">응용분야</a></li>
+        <li><a href="./index.html#news">뉴스</a></li>
+        <li><a href="/inquiry.html" aria-current="page">문의</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="crumb" aria-label="경로">
+  <div class="container">
+    <ol>
+      <li><a href="./index.html">홈</a></li>
+      <li aria-current="page">문의</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <p class="eyebrow">Contact Us</p>
+    <h1 id="hero-heading">견적 · 평가용 시약 · 기술 문의</h1>
+    <p>보유 마이크로플레이트 리더 모델과 시험 목적을 알려주시면, 담당자가 사용 방법 안내와 함께 회신드립니다.</p>
+    <div class="hero-meta">
+      <div><div class="n">24시간</div><div class="l">이내 회신</div></div>
+      <div><div class="n">평가용 시약</div><div class="l">무료 발송</div></div>
+      <div><div class="n">정식 수입</div><div class="l">국내 통관·배송</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Grid -->
+<section class="contact-section" id="contact-form">
+  <div class="container contact-grid">
+
+    <div>
+      <!-- Success card (hidden by default) -->
+      <div class="success-card" id="successCard" role="status" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h2>문의가 접수되었습니다.</h2>
+        <p>담당자가 24시간 이내 회신드리겠습니다.<br>급한 문의는 직접 전화 주시면 즉시 응대해 드립니다.</p>
+        <div class="action-row">
+          <a class="action-btn action-btn-primary" href="tel:01042534387">📞 010-4253-4387</a>
+          <a class="action-btn action-btn-outline" href="./index.html">홈으로 돌아가기</a>
+        </div>
+      </div>
+
+      <!-- Form card -->
+      <div class="form-card" id="formCard">
+        <h2>문의 정보 입력</h2>
+        <p class="form-lead">모든 항목은 sales@chcrmkorea.com으로 안전하게 전달됩니다. 스팸으로 활용되지 않습니다.</p>
+
+        <form id="inquiryForm"
+              action="https://formsubmit.co/sales@chcrmkorea.com"
+              method="POST"
+              novalidate>
+          <!-- FormSubmit 설정 (스팸 방지 · 리다이렉트) -->
+          <input type="hidden" name="_subject" value="[BIOENDO.KR] 신규 문의 접수">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://bioendo.kr/thank-you">
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="form-row">
+            <div class="form-group" id="fg-name">
+              <label for="fname">성함 <span class="req">*</span></label>
+              <input type="text" id="fname" name="성함" required minlength="2" autocomplete="name" placeholder="정기운">
+              <span class="err-msg">성함을 입력해 주세요.</span>
+            </div>
+            <div class="form-group" id="fg-org">
+              <label for="forg">기관 · 회사명 <span class="req">*</span></label>
+              <input type="text" id="forg" name="기관" required minlength="2" autocomplete="organization" placeholder="서울대학교병원 / 중외제약 등">
+              <span class="err-msg">기관·회사명을 입력해 주세요.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fdept">부서 · 직책 <span style="color:var(--muted); font-weight:400;">(선택)</span></label>
+              <input type="text" id="fdept" name="부서" autocomplete="organization-title" placeholder="QC팀 / 연구실 / 담당자">
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="femail">이메일 <span class="req">*</span></label>
+              <input type="email" id="femail" name="이메일" required autocomplete="email" placeholder="example@example.com">
+              <span class="err-msg">유효한 이메일을 입력해 주세요.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" id="fg-tel">
+              <label for="ftel">연락처 <span class="req">*</span></label>
+              <input type="tel" id="ftel" name="연락처" required autocomplete="tel" placeholder="010-1234-5678">
+              <span class="err-msg">연락처를 입력해 주세요.</span>
+            </div>
+            <div class="form-group">
+              <label for="fproduct">관심 제품 <span style="color:var(--muted); font-weight:400;">(선택)</span></label>
+              <select id="fproduct" name="관심제품">
+                <option value="">선택하세요</option>
+                <option>KC0828 · 속도론적 비색법 (Kinetic Chromogenic)</option>
+                <option>KT · 속도론적 비탁법 (Kinetic Turbidimetric)</option>
+                <option>EC64405 · 종말점 비색법 (End-Point Chromogenic)</option>
+                <option>EC80545 · Diazo Coupling (착색 시료용)</option>
+                <option>GC 시리즈 · 겔화법 (Gel-clot)</option>
+                <option>RG · 신속 겔화법 (투석액용)</option>
+                <option>MKC · Micro 속도론적 비색법</option>
+                <option>rFC · 재조합 인자 C (Recombinant Factor C)</option>
+                <option>rCR · 재조합 캐스케이드 (Recombinant Cascade)</option>
+                <option>ES · 특이 반응 LAL (β-Glucan 억제)</option>
+                <option>β-D-Glucan 검출 키트 (임상 진단)</option>
+                <option>EtEraser · 엔도톡신 제거 키트</option>
+                <option>부속품 (CSE · LRW · 마이크로플레이트 · 팁)</option>
+                <option>장비 (ELx808 리더 · 건열 인큐베이터)</option>
+                <option>확인 필요 · 상담 요청</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="freader">보유 마이크로플레이트 리더 모델 <span style="color:var(--muted); font-weight:400;">(선택)</span></label>
+            <input type="text" id="freader" name="보유장비" placeholder="예: SpectraMax ABS Plus / BioTek ELx808 / K LAB MRX / 없음 (구입 상담)">
+            <span class="hint">시험 방식·프로토콜 안내를 위해 알려주시면 더 정확한 상담이 가능합니다.</span>
+          </div>
+
+          <div class="form-group" id="fg-purpose">
+            <label for="fpurpose">시험 목적 · 요청 사항 <span class="req">*</span></label>
+            <textarea id="fpurpose" name="시험목적" required minlength="10" placeholder="예:&#10;- 주사제 완제품 BET 검사 (약전 KP 준수)&#10;- 세포치료제 원자재 엔도톡신 관리 (0.005 EU/mL 감도 필요)&#10;- 평가용 시약 요청 (테스트 후 정식 발주 예정)&#10;- 대리점 계약 상담"></textarea>
+            <span class="err-msg">시험 목적을 10자 이상 입력해 주세요.</span>
+          </div>
+
+          <div class="checkbox-group">
+            <div class="checkbox-row">
+              <input type="checkbox" id="fagree" name="개인정보동의" required value="동의함">
+              <label for="fagree">
+                <strong>개인정보 수집·이용에 동의합니다.</strong> <span class="req">*</span><br>
+                <span style="font-size:12.5px; color:var(--ink-soft);">수집 항목: 성함·이메일·연락처·기관명 · 이용 목적: 문의 응대·견적 발송 · 보관 기간: 1년 (문의 종료 후 즉시 파기). 자세한 사항은 <a href="#">개인정보처리방침</a>을 참고하세요.</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span>📧 문의 보내기</span>
+          </button>
+          <p class="submit-hint">보내기 실패 시 sales@chcrmkorea.com 로 직접 이메일 부탁드립니다.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sidebar contact info -->
+    <aside>
+      <div class="contact-info" aria-label="연락처 정보">
+        <h3>연락처</h3>
+
+        <div class="info-row">
+          <span class="info-icon" aria-hidden="true">📞</span>
+          <div class="info-content">
+            <div class="info-label">대표 전화</div>
+            <div class="info-value"><a href="tel:0224064387">02-406-4387</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-icon" aria-hidden="true">📱</span>
+          <div class="info-content">
+            <div class="info-label">담당자 직통 (정기운)</div>
+            <div class="info-value"><a href="tel:01042534387">010-4253-4387</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-icon" aria-hidden="true">✉</span>
+          <div class="info-content">
+            <div class="info-label">이메일</div>
+            <div class="info-value"><a href="mailto:sales@chcrmkorea.com">sales@chcrmkorea.com</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-icon" aria-hidden="true">📠</span>
+          <div class="info-content">
+            <div class="info-label">Fax</div>
+            <div class="info-value">031-601-9381</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-icon" aria-hidden="true">📍</span>
+          <div class="info-content">
+            <div class="info-label">주소</div>
+            <div class="info-value">경기도 성남시 중원구<br>갈마치로288번길 14,<br>SK V1 A동 1407호</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <span class="info-icon" aria-hidden="true">🏢</span>
+          <div class="info-content">
+            <div class="info-label">사업자 정보</div>
+            <div class="info-value">글로벌바이오테크<br>대표 정기운<br>사업자 660-30-00866</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hours-card">
+        <h4>⏰ 업무 시간 안내</h4>
+        <p>평일 09:00 – 18:00 (점심 12:30 – 13:30)<br>주말·공휴일 휴무. 급한 문의는 담당자 직통으로.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand-row">
+          <img src="/images/logo-bioendo.png" alt="BIOENDO 로고">
+          <div>
+            <div class="foot-brand-title">BIOENDO.KR</div>
+            <div class="foot-brand-sub">BIOENDO × 글로벌바이오테크 공식 콜라보 사이트</div>
+          </div>
+        </div>
+        <p>BIOENDO가 인증한 한국 총판 대리점으로서<br>엔도톡신 시험(BET) 시약·기술 지원을 국내에 공급합니다.</p>
+        <p style="margin-top:14px; font-size:12px; color:#8AA4C9;">
+          Content and product images © BIOENDO<br>
+          Used with permission by Global Biotech, Korea.
+        </p>
+      </div>
+      <div>
+        <h4>사이트 맵</h4>
+        <ul>
+          <li><a href="/about.html">회사소개</a></li>
+          <li><a href="./index.html#products">제품 라인업</a></li>
+          <li><a href="./index.html#applications">응용 분야</a></li>
+          <li><a href="./index.html#news">기술자료·뉴스</a></li>
+          <li><a href="/inquiry.html">견적 문의</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>주요 제품</h4>
+        <ul>
+          <li>KC (Kinetic Chromogenic)</li>
+          <li>KT (Kinetic Turbidimetric)</li>
+          <li>EC (End-Point Chromogenic)</li>
+          <li>Gel Clot · Rapid Gel Clot</li>
+          <li>rFC · rCR 재조합 시약</li>
+        </ul>
+      </div>
+      <div>
+        <h4>연락처</h4>
+        <p><a href="tel:0224064387">Tel. 02-406-4387</a><br>
+        <a href="tel:01042534387">Cell. 010-4253-4387</a><br>
+        Fax. 031-601-9381<br>
+        <a href="mailto:sales@chcrmkorea.com">sales@chcrmkorea.com</a></p>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 Global Biotech Korea · Authorized Distributor of BIOENDO
+    </div>
+  </div>
+</footer>
+
+<script>
+// Client-side validation + graceful FormSubmit handling
+const form = document.getElementById('inquiryForm');
+const successCard = document.getElementById('successCard');
+const formCard = document.getElementById('formCard');
+const submitBtn = document.getElementById('submitBtn');
+
+function clearError(id) { document.getElementById(id).classList.remove('error'); }
+function setError(id) { document.getElementById(id).classList.add('error'); }
+
+form.addEventListener('submit', function(e) {
+  ['fg-name','fg-org','fg-email','fg-tel','fg-purpose'].forEach(clearError);
+  let ok = true;
+
+  const name = document.getElementById('fname').value.trim();
+  const org = document.getElementById('forg').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const tel = document.getElementById('ftel').value.trim();
+  const purpose = document.getElementById('fpurpose').value.trim();
+  const agree = document.getElementById('fagree').checked;
+
+  if (name.length < 2) { setError('fg-name'); ok = false; }
+  if (org.length < 2) { setError('fg-org'); ok = false; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError('fg-email'); ok = false; }
+  if (tel.length < 8) { setError('fg-tel'); ok = false; }
+  if (purpose.length < 10) { setError('fg-purpose'); ok = false; }
+  if (!agree) { alert('개인정보 수집·이용에 동의해 주셔야 문의를 접수할 수 있습니다.'); ok = false; }
+
+  if (!ok) {
+    e.preventDefault();
+    document.querySelector('.error').scrollIntoView({behavior:'smooth', block:'center'});
+    return false;
+  }
+
+  // 성공 UX (실제 전송은 form이 진행)
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>전송 중…</span>';
+  // FormSubmit이 정상 처리 시 리다이렉트되고, 실패 시 사용자에게 fallback으로 이메일 링크 안내
+});
+
+// FormSubmit 첫 사용 시 이메일 확인 링크 필요할 수 있으므로 초회 안내
+if (!localStorage.getItem('bioendokr_form_initialized')) {
+  console.info('BIOENDO.KR — FormSubmit 최초 사용 시 sales@chcrmkorea.com로 확인 이메일 발송됩니다. 확인 후 정상 접수됩니다.');
+  localStorage.setItem('bioendokr_form_initialized', '1');
+}
+</script>
+
+</body>
+</html>

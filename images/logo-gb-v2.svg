@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 84" role="img" aria-label="Global Biotech">
+  <defs>
+    <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E5AFF"/>
+      <stop offset="100%" stop-color="#0EA5A5"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#78ADFF"/>
+      <stop offset="100%" stop-color="#0EA5A5"/>
+    </linearGradient>
+    <style>
+      .wm-primary { font-family: Inter, "Pretendard", sans-serif; font-weight: 800; fill: #0A0F1E; letter-spacing: -0.02em; }
+      .wm-sub     { font-family: Inter, "Pretendard", sans-serif; font-weight: 600; fill: #6B7690; letter-spacing: 0.14em; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- Mark: 분자 클러스터 (외부 링 + 3-node) -->
+  <g transform="translate(6,4)">
+    <!-- 외부 그라디언트 원 (그림자·프리미엄 느낌) -->
+    <circle cx="38" cy="38" r="36" fill="url(#markGrad)"/>
+    <!-- 내부 얇은 링 -->
+    <circle cx="38" cy="38" r="30" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+    <!-- 분자 3-node 클러스터 (삼각형 배치) -->
+    <!-- 상단 노드 -->
+    <circle cx="38" cy="20"  r="7" fill="#ffffff"/>
+    <!-- 좌하단 노드 -->
+    <circle cx="22" cy="47"  r="7" fill="#ffffff"/>
+    <!-- 우하단 노드 -->
+    <circle cx="54" cy="47"  r="7" fill="#ffffff"/>
+    <!-- 연결선 -->
+    <path d="M38,20 L22,47 M38,20 L54,47 M22,47 L54,47" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" opacity=".72"/>
+    <!-- 중앙 강조 -->
+    <circle cx="38" cy="38" r="3" fill="#F4B740"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(96, 0)">
+    <text x="0" y="42" class="wm-primary" font-size="32">Global<tspan fill="#1E5AFF">Biotech</tspan></text>
+    <text x="0" y="66" class="wm-sub" font-size="10">Endotoxin Testing · Bioendo Korea</text>
+  </g>
+</svg>

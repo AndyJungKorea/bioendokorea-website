@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<title>회사소개 | BIOENDO × Global Biotech 한국 총판 대리점</title>
+<meta name="description" content="BIOENDO 40여 년 전문성 × 글로벌바이오테크 한국 총판 대리점 공식 콜라보. GMP · ISO 9001 인증. BIOENDO · 정식 수입 · CoA 원본 제공.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Inter:wght@400;600;700;800&display=swap">
+<style>
+:root {
+  --nav-blue: #143A6B; --brand-blue: #1F4E9C; --accent-blue: #2A79D6; --sky: #78D5FF;
+  --mint: #2AB090; --gold: #E8B23A; --deep: #0A1F3D;
+  --ink: #1B2432; --ink-soft: #4B5768; --muted: #7A8494;
+  --line: #E4E8EF; --bg: #F6F8FB; --focus: #FFB300;
+  --radius: 12px;
+  --shadow-1: 0 2px 6px rgba(20,58,107,.06);
+  --shadow-2: 0 12px 32px rgba(20,58,107,.14);
+  --shadow-3: 0 22px 48px rgba(20,58,107,.20);
+  --container: 1240px;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif; color: var(--ink); background: #fff; line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--brand-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { font-family: inherit; cursor: pointer; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 16px; font-weight: 700; border-radius: 6px; z-index: 999; }
+.skip:focus { left: 8px; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+/* Utility bar */
+.util-bar { background: var(--deep); color: #cfe0f5; font-size: 13px; }
+.util-bar .container { display: flex; align-items: center; justify-content: space-between; min-height: 38px; gap: 16px; flex-wrap: wrap; }
+.util-left, .util-right { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.util-bar a { color: #cfe0f5; }
+.util-bar strong { color: #fff; }
+.util-partner { display: inline-flex; align-items: center; gap: 8px; }
+.util-partner img { height: 16px; }
+
+/* Header */
+.header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand img.logo { height: 48px; width: auto; }
+.brand-txt { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-title { font-family: Inter,"Noto Sans KR",sans-serif; font-weight: 800; color: var(--nav-blue); font-size: 22px; letter-spacing: .3px; }
+.brand-sub { font-size: 12.5px; color: var(--ink-soft); font-weight: 500; }
+nav.primary ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; justify-content: flex-end; align-items: center; }
+nav.primary a { color: var(--ink); font-weight: 600; font-size: 15px; padding: 10px 4px; border-bottom: 3px solid transparent; transition: border-color .15s, color .15s; }
+nav.primary a:hover, nav.primary a[aria-current="page"] { color: var(--brand-blue); border-color: var(--brand-blue); text-decoration: none; }
+.header-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-blue); color: #fff !important; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; border: 0; }
+.header-cta:hover { background: var(--nav-blue); text-decoration: none !important; }
+
+/* Breadcrumb */
+.crumb { background: var(--bg); padding: 14px 0; font-size: 13.5px; border-bottom: 1px solid var(--line); }
+.crumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.crumb li { color: var(--ink-soft); }
+.crumb li + li::before { content: "›"; color: var(--muted); margin-right: 6px; }
+.crumb a { color: var(--ink-soft); }
+.crumb li[aria-current="page"] { color: var(--nav-blue); font-weight: 700; }
+
+/* About Hero */
+.about-hero { position: relative; color: #fff; padding: 90px 0 100px; background: linear-gradient(135deg, rgba(10,31,61,.94) 0%, rgba(31,78,156,.85) 55%, rgba(42,121,214,.72) 100%), url("/images/lab-work.jpg") center/cover no-repeat; }
+.about-hero .container { position: relative; z-index: 2; text-align: center; }
+.about-hero .tag { display: inline-block; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); padding: 6px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
+.about-hero h1 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; margin: 0 0 16px; letter-spacing: -.5px; line-height: 1.2; }
+.about-hero h1 .accent { color: var(--sky); }
+.about-hero p { font-size: 17px; max-width: 720px; margin: 0 auto; color: #DCE7F6; }
+.about-hero-fact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 900px; margin: 40px auto 0; }
+.hero-fact { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.20); border-radius: 12px; padding: 20px 16px; backdrop-filter: blur(6px); }
+.hero-fact .n { font-family: Inter,sans-serif; font-weight: 800; font-size: 30px; color: #fff; }
+.hero-fact .l { font-size: 12px; color: #A6C4EF; margin-top: 4px; font-weight: 600; }
+
+/* Section common */
+section { padding: 90px 0; }
+h2.title { text-align: center; font-size: clamp(24px, 2.4vw, 32px); font-weight: 800; color: var(--nav-blue); margin: 0 0 12px; letter-spacing: -.3px; position: relative; padding-bottom: 16px; }
+h2.title::after { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 50px; height: 3px; background: var(--brand-blue); border-radius: 3px; }
+p.subtitle { text-align: center; color: var(--ink-soft); max-width: 720px; margin: 12px auto 48px; font-size: 15.5px; }
+
+/* Founder */
+.founder { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.founder-media { position: relative; }
+.founder-media .lead { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow-2); }
+.founder-media .sub { position: absolute; right: -20px; bottom: -30px; width: 45%; aspect-ratio: 4/3; object-fit: cover; border-radius: 14px; border: 6px solid #fff; box-shadow: var(--shadow-2); }
+.founder h2.title { text-align: left; margin: 0 0 20px; padding-bottom: 12px; }
+.founder h2.title::after { left: 0; transform: none; }
+.founder p { color: var(--ink-soft); margin: 0 0 16px; font-size: 15.5px; }
+.founder p strong { color: var(--ink); }
+.founder-check { padding: 0; margin: 20px 0 0; list-style: none; }
+.founder-check li { padding: 8px 0 8px 32px; position: relative; color: var(--ink); font-weight: 500; }
+.founder-check li::before { content: "✓"; position: absolute; left: 0; top: 8px; width: 22px; height: 22px; border-radius: 50%; background: var(--brand-blue); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; }
+
+/* Timeline */
+.timeline-bg { background: var(--bg); }
+.timeline { position: relative; max-width: 900px; margin: 0 auto; padding: 20px 0; }
+.timeline::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--brand-blue), var(--sky)); transform: translateX(-50%); }
+.timeline-item { position: relative; width: 50%; padding: 12px 40px 12px 0; margin-bottom: 28px; }
+.timeline-item:nth-child(even) { margin-left: 50%; padding: 12px 0 12px 40px; }
+.timeline-item .dot { position: absolute; top: 22px; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 4px solid var(--brand-blue); z-index: 2; }
+.timeline-item:nth-child(odd) .dot { right: -10px; }
+.timeline-item:nth-child(even) .dot { left: -10px; }
+.timeline-card { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: var(--shadow-1); border: 1px solid var(--line); }
+.timeline-year { font-family: Inter, sans-serif; font-weight: 800; font-size: 22px; color: var(--brand-blue); letter-spacing: .5px; }
+.timeline-card h3 { margin: 4px 0 6px; font-size: 16px; color: var(--nav-blue); font-weight: 700; }
+.timeline-card p { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.55; }
+
+/* Certifications */
+.certs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.cert-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 24px; text-align: center; transition: transform .18s, box-shadow .18s, border-color .18s; }
+.cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: #CDDDF3; }
+.cert-icon { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 30px; }
+.icon-gmp { background: #E8F0FE; color: #1F4E9C; }
+.icon-iso { background: #E7F7F1; color: #1B8A6B; }
+.icon-tech { background: #FEF3E1; color: #A66A00; }
+.icon-pharm { background: #F3E8FE; color: #6A3AA5; }
+.cert-card h3 { margin: 0 0 6px; color: var(--nav-blue); font-size: 16px; font-weight: 800; }
+.cert-card p { margin: 0; color: var(--ink-soft); font-size: 13.5px; }
+
+/* Partner section */
+.partner-bg { background: var(--bg); }
+.partner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.partner h2.title { text-align: left; margin: 0 0 16px; padding-bottom: 12px; }
+.partner h2.title::after { left: 0; transform: none; }
+.partner p.intro { color: var(--ink-soft); font-size: 15.5px; margin: 0 0 24px; }
+.partner-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-1); }
+.partner-card h3 { color: var(--nav-blue); margin: 0 0 14px; font-size: 18px; font-weight: 800; letter-spacing: -.2px; }
+.partner-info { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; margin-bottom: 20px; }
+.partner-info dt { font-size: 12.5px; color: var(--muted); font-weight: 700; letter-spacing: .3px; text-transform: uppercase; margin-bottom: 3px; }
+.partner-info dd { margin: 0; font-size: 14.5px; color: var(--ink); font-weight: 700; }
+.services { list-style: none; padding: 0; margin: 0; }
+.services li { padding: 10px 0 10px 30px; position: relative; color: var(--ink); font-size: 14.5px; font-weight: 500; border-top: 1px dashed var(--line); }
+.services li:first-child { border-top: 0; }
+.services li::before { content: "→"; position: absolute; left: 0; top: 10px; color: var(--brand-blue); font-weight: 800; font-size: 16px; }
+.agreement-visual { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; text-align: center; }
+.agreement-visual img { width: 100%; max-width: 400px; height: auto; margin: 0 auto; border-radius: 8px; border: 1px solid var(--line); }
+.agreement-cap { font-size: 12.5px; color: var(--muted); margin-top: 12px; }
+.sub-dist { background: #F0F4FB; border-radius: var(--radius); padding: 24px; margin-top: 24px; }
+.sub-dist h4 { margin: 0 0 12px; color: var(--nav-blue); font-size: 15px; font-weight: 800; }
+.sub-dist p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+.sub-dist strong { color: var(--ink); }
+
+/* CTA */
+.cta { background: linear-gradient(135deg, var(--nav-blue), var(--brand-blue)); color: #fff; padding: 60px 0; }
+.cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+.cta h2 { font-size: 26px; margin: 0 0 10px; }
+.cta p { color: #DCE7F6; margin: 0; }
+.cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 12px; font-weight: 700; font-size: 15px; border: 2px solid transparent; text-decoration: none; transition: transform .15s, background .15s, border-color .15s; }
+.btn-primary { background: #fff; color: var(--brand-blue); }
+.btn-primary:hover { background: #EAF4FF; transform: translateY(-1px); text-decoration: none; }
+.btn-outline { border-color: rgba(255,255,255,.55); color: #fff; }
+.btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.10); text-decoration: none; }
+
+/* Footer */
+footer { background: var(--deep); color: #cfe0f5; padding: 60px 0 22px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.15); }
+footer h4 { color: #fff; font-size: 15px; margin: 0 0 16px; }
+footer p, footer li { font-size: 13.5px; line-height: 1.7; margin: 0; }
+footer ul { list-style: none; padding: 0; margin: 0; }
+footer a { color: #cfe0f5; }
+footer a:hover { color: #fff; }
+.foot-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.foot-brand-row img { height: 38px; width: auto; filter: brightness(1.5); }
+.foot-brand-title { color: #fff; font-weight: 800; font-size: 18px; font-family: Inter, sans-serif; }
+.foot-brand-sub { font-size: 12px; color: #A6C4EF; }
+.copy { padding-top: 22px; text-align: center; font-size: 12px; color: #8AA4C9; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+@media (max-width: 1024px) {
+  .founder, .partner, .cta-inner, .partner-info { grid-template-columns: 1fr; gap: 40px; }
+  .founder-media .sub { position: static; width: 60%; margin: 20px auto 0; display: block; }
+  .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-hero-fact { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  nav.primary ul { display: none; }
+  .timeline::before { left: 20px; }
+  .timeline-item, .timeline-item:nth-child(even) { width: 100%; margin-left: 0; padding: 12px 0 12px 50px; }
+  .timeline-item .dot, .timeline-item:nth-child(odd) .dot, .timeline-item:nth-child(even) .dot { left: 10px; right: auto; }
+}
+@media (max-width: 640px) {
+  section { padding: 60px 0; }
+  .about-hero-fact, .certs-grid, .footer-grid { grid-template-columns: 1fr; }
+  .brand-sub { display: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip">본문 바로가기</a>
+
+<!-- Utility bar -->
+<div class="util-bar">
+  <div class="container">
+    <div class="util-left">
+      <span class="util-partner">
+        <img src="/images/logo-gb-v2.png" style="height:22px;width:auto;" alt="글로벌바이오테크">
+        <span><strong>글로벌바이오테크</strong> — BIOENDO 한국 총판 대리점</span>
+      </span>
+    </div>
+    <div class="util-right">
+      <a href="tel:0224064387">📞 02-406-4387</a>
+      <a href="mailto:sales@chcrmkorea.com">✉ sales@chcrmkorea.com</a>
+      <a href="https://www.bioendo.com/" rel="external" target="_blank">BIOENDO 홈 ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" role="banner">
+  <div class="container header-inner">
+    <a class="brand" href="./index.html" aria-label="BIOENDO Korea 홈으로">
+      <img class="logo" src="/images/logo-bioendo.png" alt="BIOENDO 로고">
+      <span class="brand-txt">
+        <span class="brand-title" style="color:#1E5AFF;letter-spacing:.02em;">GLOBAL <span style="color:#0EA5A5;">BIOTECH</span></span>
+        <span class="brand-sub">BIOENDO Korea · 한국 총판 대리점</span>
+      </span>
+    </a>
+    <nav class="primary" aria-label="주 메뉴">
+      <ul>
+        <li><a href="./index.html">홈</a></li>
+        <li><a href="/about.html" aria-current="page">회사소개</a></li>
+        <li><a href="./index.html#products">제품</a></li>
+        <li><a href="./index.html#applications">응용분야</a></li>
+        <li><a href="./index.html#news">뉴스</a></li>
+        <li><a href="/inquiry.html" class="header-cta">견적 문의 →</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="crumb" aria-label="경로">
+  <div class="container">
+    <ol>
+      <li><a href="./index.html">홈</a></li>
+      <li aria-current="page">회사소개</li>
+    </ol>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- About Hero -->
+<section class="about-hero" aria-labelledby="about-hero-h">
+  <div class="container">
+    <span class="tag">🤝 BIOENDO × Global Biotech</span>
+    <h1 id="about-hero-h">
+      <span class="accent">40여 년</span>의 엔도톡신 전문성,<br>
+      한국에서는 한 곳이 책임집니다.
+    </h1>
+    <p>
+      BIOENDO는 엔도톡신 시험 (BET) 시약 산업을 40여 년간 이끌어 온 리세이트(LAL/TAL) 시약 전문 제조사입니다.
+      한국에서는 글로벌바이오테크가 총판 대리점으로서 BIOENDO · 기술 지원 · 통관 · CoA 원본 제공을 일원화하여 책임집니다.
+    </p>
+    <div class="about-hero-fact">
+      <div class="hero-fact"><div class="n">1988</div><div class="l">BIOENDO 시약 승인 (최초 로트)</div></div>
+      <div class="hero-fact"><div class="n">40여 년</div><div class="l">엔도톡신 시약 전문 경력</div></div>
+      <div class="hero-fact"><div class="n">100+ 국가</div><div class="l">글로벌 공급 실적</div></div>
+      <div class="hero-fact"><div class="n">2020</div><div class="l">글로벌바이오테크 한국 개시</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Founder / Profile -->
+<section aria-labelledby="founder-h">
+  <div class="container founder">
+    <div class="founder-media">
+      <img class="lead" src="https://cdn.globalso.com/bioendo/about-us-0601.jpg" alt="BIOENDO 실험실">
+    </div>
+    <div>
+      <h2 id="founder-h" class="title">BIOENDO 프로필</h2>
+      <p>
+        BIOENDO는 <strong>40여 년간</strong> 엔도톡신 시험 시약을 전문 연구·제조해 온 리세이트 시약 산업의 <strong>전문 제조사</strong>입니다.
+        1988년 시약 승인을 시작으로 100개 이상의 국가에 공급하고 있으며, <strong>국가 과학기술 성과 완성 증명</strong>을 보유하고 있습니다.
+      </p>
+      <p>
+        창립자 <strong>Wu Weihong</strong> 박사는 리세이트 시약 R&amp;D 1세대 개척자로,
+        『Tachypleus and Endotoxin Test Methods』 4권 시리즈를 저술하여 LAL 시약 연구를 집대성했습니다.
+      </p>
+      <ul class="founder-check">
+        <li>세계 최초 <strong>Rapid Gel-clot (신속 겔화법) 시약</strong> 상용화</li>
+        <li>세계 최초 <strong>속도론적 비색법 (Kinetic Chromogenic) 시약</strong> 상용화</li>
+        <li><strong>국가표준품 3차 배치</strong> 지정 · 산업 벤치마크 시약</li>
+        <li>투구게 자원 보호를 위한 <strong>재조합 시약(rFC · rCR)</strong> 자체 개발</li>
+        <li>상장 기업 · <strong>기술 작은 거인 기업</strong> 인증</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="timeline-bg" aria-labelledby="timeline-h">
+  <div class="container">
+    <h2 id="timeline-h" class="title">40여 년의 발자취</h2>
+    <p class="subtitle">BIOENDO가 걸어온 주요 순간과 한국 대리점 개시까지의 흐름입니다.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">1988</div>
+          <h3>시약 승인 · 산업 개척</h3>
+          <p>Wu Weihong 박사 주도로 리세이트(LAL) 시약 승인 획득 · 산업 개척 시작.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">1990s</div>
+          <h3>세계 최초 라인업 개발</h3>
+          <p>특이 반응 엔도톡신 시험 시약 · Rapid Gel-clot · 속도론적 비색법 시약을 세계 최초 상용화.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2000s</div>
+          <h3>국가표준품 선정</h3>
+          <p>국가 3차 표준품 배치 지정 · 산업 벤치마크 시약사로 자리매김.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2015</div>
+          <h3>글로벌트레이딩 한국 유통 개시</h3>
+          <p>대한민국 시장에서 BIOENDO 시약 초기 유통 시작 (글로벌트레이딩).</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2020</div>
+          <h3>글로벌바이오테크 대리점 승계</h3>
+          <p>글로벌바이오테크가 한국 총판 대리점으로 승계 · BIOENDO 시약 체계 완성.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2020s</div>
+          <h3>재조합 시약 확대</h3>
+          <p>rFC(재조합 인자 C) · rCR(재조합 캐스케이드) 라인업 확장 · 상장 · 기술 작은 거인 기업 인증.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2024</div>
+          <h3>2024 CPHI Shanghai 참가</h3>
+          <p>Phoenix 자동 엔도톡신 검출 시스템 출품 (부스 W4G99).</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <div class="timeline-year">2026</div>
+          <h3>rCR 국내 정식 공급</h3>
+          <p>rFC 대비 감도·안정성이 개선된 재조합 시약(RCR0428S)을 한국 시장에 도입.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section aria-labelledby="cert-h">
+  <div class="container">
+    <h2 id="cert-h" class="title">BIOENDO 인증 · 표준 준수</h2>
+    <p class="subtitle">BIOENDO는 국제 품질·생산 규격 및 약전 기준을 모두 준수합니다.</p>
+    <div class="certs-grid">
+      <article class="cert-card">
+        <div class="cert-icon icon-gmp" aria-hidden="true">🏭</div>
+        <h3>GMP</h3>
+        <p>Good Manufacturing Practice 기준 생산 관리</p>
+      </article>
+      <article class="cert-card">
+        <div class="cert-icon icon-iso" aria-hidden="true">📋</div>
+        <h3>ISO 9001</h3>
+        <p>국제 품질경영 시스템 인증</p>
+      </article>
+      <article class="cert-card">
+        <div class="cert-icon icon-tech" aria-hidden="true">🌟</div>
+        <h3>기술 작은 거인 기업</h3>
+        <p>고신기술 전문 인증 기업</p>
+      </article>
+      <article class="cert-card">
+        <div class="cert-icon icon-pharm" aria-hidden="true">📜</div>
+        <h3>약전 규격 충족</h3>
+        <p>USP · EP · KP · JP 4대 약전 규격 준수</p>
+      </article>
+    </div>
+    <p class="subtitle" style="margin-top:36px;">
+      약전 조문: <strong style="color:var(--brand-blue);">USP &lt;85&gt; · USP &lt;86&gt; (재조합) · EP 2.6.14 · EP 2.6.32 (재조합) · KP · JP 4.01</strong>
+    </p>
+  </div>
+</section>
+
+<!-- Korea Partner -->
+<section class="partner-bg" aria-labelledby="partner-h">
+  <div class="container partner">
+    <div>
+      <h2 id="partner-h" class="title">한국 총판 대리점<br>글로벌바이오테크</h2>
+      <p class="intro">
+        BIOENDO가 한국에서 지정한 총판 대리점입니다.
+        BIOENDO 시약을 <strong>BIOENDO</strong>로 BIOENDO하며,
+        통관 · CoA 원본 제공 · 기술 지원까지 국내에서 완결됩니다.
+      </p>
+      <div class="partner-card">
+        <h3>서비스 범위</h3>
+        <ul class="services">
+          <li>BIOENDO 시약 국내 유통 · <strong>BIOENDO 시약 보유</strong></li>
+          <li>BIOENDO CoA · MSDS · 시험방법서 로트별 제공</li>
+          <li><strong>정식 수입</strong> 통관·배송 표준 리드타임</li>
+          <li>제약 QC · 세포치료 R&D · 정제수 공정 기술 상담</li>
+          <li>SpectraMax · ELx808 · K LAB MRX 등 <strong>고객 보유 장비 프로토콜</strong> 제공</li>
+          <li>세금계산서 발행 · 후불 결제 · 관수 조달 대응</li>
+        </ul>
+      </div>
+
+      <div class="sub-dist">
+        <h4>지역 협력 대리점</h4>
+        <p>
+          <strong>대구 · 경북 지역</strong>은 <strong>대한과학</strong>과의 지역 대리점 계약을 통해 별도 대응합니다.<br>
+          대구광역시 서구 북비산로 231 · 대표 정화용 · 010-7597-2288
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <div class="partner-card">
+        <h3>대리점 정보</h3>
+        <dl class="partner-info">
+          <div><dt>상호</dt><dd>글로벌바이오테크</dd></div>
+          <div><dt>대표자</dt><dd>정기운</dd></div>
+          <div><dt>사업자등록번호</dt><dd>660-30-00866</dd></div>
+          <div><dt>개업일</dt><dd>2020-02-20</dd></div>
+          <div><dt>업태</dt><dd>제조업 · 도소매 · 서비스업</dd></div>
+          <div><dt>종목</dt><dd>실험용 시약 · 미생물 분석</dd></div>
+          <div><dt>Tel</dt><dd>02-406-4387</dd></div>
+          <div><dt>Cell</dt><dd>010-4253-4387</dd></div>
+          <div><dt>Fax</dt><dd>031-601-9381</dd></div>
+          <div><dt>Email</dt><dd style="font-size:12.5px;">sales@chcrmkorea.com</dd></div>
+        </dl>
+        <p style="margin:0; font-size:13.5px; color:var(--ink-soft);">
+          <strong style="color:var(--ink);">BIOENDO 영업소</strong><br>
+          경기도 성남시 중원구 갈마치로288번길 14,<br>
+          SK V1 A동 1407호
+        </p>
+      </div>
+
+      <div class="agreement-visual" style="margin-top:20px;">
+        <img src="/images/agreement.png" alt="BIOENDO 대리점 계약서 원본">
+        <p class="agreement-cap">BIOENDO 대리점 계약서 원본</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" aria-labelledby="cta-h">
+  <div class="container cta-inner">
+    <div>
+      <h2 id="cta-h">엔도톡신 시험 시약이 필요하신가요?</h2>
+      <p>보유 장비 · 시험 목적을 알려주시면 평가용 시약을 무료로 발송해 드립니다.</p>
+    </div>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="/inquiry.html">📧 견적 요청하기</a>
+      <a class="btn btn-outline" href="tel:01042534387">📞 010-4253-4387</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand-row">
+          <img src="/images/logo-bioendo.png" alt="BIOENDO 로고">
+          <div>
+            <div class="foot-brand-title">BIOENDO.KR</div>
+            <div class="foot-brand-sub">BIOENDO × 글로벌바이오테크 공식 콜라보 사이트</div>
+          </div>
+        </div>
+        <p>BIOENDO가 인증한 한국 총판 대리점으로서<br>엔도톡신 시험 (BET) 시약·기술 지원을 국내에 공급합니다.</p>
+        <p style="margin-top:14px; font-size:12px; color:#8AA4C9;">
+          Content and product images © BIOENDO<br>
+          Used with permission by Global Biotech, Korea.
+        </p>
+      </div>
+      <div>
+        <h4>사이트 맵</h4>
+        <ul>
+          <li><a href="/about.html">회사소개</a></li>
+          <li><a href="./index.html#products">제품 라인업</a></li>
+          <li><a href="./index.html#applications">응용 분야</a></li>
+          <li><a href="./index.html#news">기술자료·뉴스</a></li>
+          <li><a href="/inquiry.html">견적 문의</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>주요 제품</h4>
+        <ul>
+          <li>KC · 속도론적 비색법</li>
+          <li>KT · 속도론적 비탁법</li>
+          <li>EC · 종말점 비색법</li>
+          <li>Gel-clot · 겔화법</li>
+          <li>rFC · rCR 재조합 시약</li>
+        </ul>
+      </div>
+      <div>
+        <h4>연락처</h4>
+        <p>경기도 성남시 중원구 갈마치로288번길 14,<br>SK V1 A동 1407호</p>
+        <p style="margin-top:8px;">
+          <a href="tel:0224064387">Tel. 02-406-4387</a><br>
+          <a href="tel:01042534387">Cell. 010-4253-4387</a><br>
+          Fax. 031-601-9381<br>
+          <a href="mailto:sales@chcrmkorea.com">sales@chcrmkorea.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="copy">
+      © 2026 Global Biotech Korea · Authorized Distributor of BIOENDO · All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+                                                                                                  
