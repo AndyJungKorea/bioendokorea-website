@@ -608,6 +608,90 @@ footer{background:var(--ink-1); color:#B0BCD8; padding:80px 0 32px;}
 
 svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; border-radius: 10px; box-shadow: 0 2px 8px rgba(30,90,255,.24); }
 .foot-brand svg.brand-mark { width: 44px; height: 44px; }
+
+/* ══════ 모바일 최적화 (V6.2 · 2026-07-17) ══════ */
+.menu-btn{display:none;background:none;border:0;width:44px;height:44px;padding:0;
+  align-items:center;justify-content:center;cursor:pointer;border-radius:10px;transition:background .18s}
+.menu-btn:hover{background:var(--bg-3)}
+.menu-btn svg{width:24px;height:24px;stroke:var(--ink-1);stroke-width:2;fill:none;stroke-linecap:round}
+.menu-btn.open svg .top{transform:rotate(45deg) translate(2px,4px)}
+.menu-btn.open svg .mid{opacity:0}
+.menu-btn.open svg .bot{transform:rotate(-45deg) translate(3px,-5px)}
+.menu-btn svg .line{transition:transform .2s var(--ease-spring),opacity .15s;transform-origin:center}
+.mobile-drawer{display:none;position:fixed;top:0;right:0;width:min(320px,80vw);height:100vh;
+  background:#fff;z-index:1000;box-shadow:-20px 0 48px rgba(10,15,30,.16);
+  transform:translateX(100%);transition:transform .3s var(--ease-spring);overflow-y:auto;padding:24px 20px}
+.mobile-drawer.open{transform:translateX(0)}
+.mobile-drawer-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;
+  border-bottom:1px solid var(--line-1);margin-bottom:16px}
+.mobile-drawer-head .brand{font-family:Inter,sans-serif;font-weight:800;color:var(--brand-1);font-size:16px}
+.mobile-drawer-close{background:none;border:0;width:36px;height:36px;cursor:pointer;font-size:20px;color:var(--ink-3);border-radius:8px}
+.mobile-drawer-close:hover{background:var(--bg-3)}
+.mobile-drawer .m-section{margin-bottom:20px}
+.mobile-drawer .m-section h4{font-family:Inter,sans-serif;font-size:11px;font-weight:800;
+  color:var(--brand-1);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.mobile-drawer a{display:block;padding:12px 14px;color:var(--ink-1);font-weight:500;font-size:15px;
+  border-radius:10px;text-decoration:none;transition:background .12s}
+.mobile-drawer a:hover{background:var(--bg-3)}
+.mobile-drawer .m-desc{display:block;font-size:12px;color:var(--ink-4);margin-top:2px;font-weight:400}
+.mobile-drawer .m-cta{display:block;margin-top:16px;padding:14px 20px;background:var(--ink-1);color:#fff;
+  border-radius:12px;text-align:center;font-weight:700;text-decoration:none}
+.drawer-backdrop{display:none;position:fixed;inset:0;background:rgba(10,15,30,.45);z-index:999;
+  backdrop-filter:blur(4px);opacity:0;transition:opacity .3s}
+.drawer-backdrop.open{opacity:1}
+@media(max-width:940px){
+  .menu-btn{display:inline-flex}
+  .mobile-drawer{display:block}
+  .drawer-backdrop{display:block}
+  body.nav-open{overflow:hidden}
+  .brand-txt .n{font-size:16px}
+  .brand-txt .s{font-size:11px}
+  svg.brand-mark{width:36px;height:36px}
+  .announce{font-size:11.5px;padding:8px 12px;line-height:1.5}
+  .announce a{display:inline-block;margin-left:4px}
+  section{padding:64px 0}
+  .section-head{margin-bottom:40px}
+  .hero-badge{font-size:12px;padding:6px 12px 6px 6px}
+  .hero .lead{font-size:15px;line-height:1.65;margin-bottom:24px}
+  .hero-cta{margin-bottom:32px}
+  .hero-cta .btn,.btn{padding:14px 22px;font-size:14.5px;min-height:48px}
+  .hero-stack{grid-template-columns:1fr !important;height:auto;gap:16px}
+  .stack-card{position:static;transform:none !important;width:auto !important;padding:18px}
+  .stack-3{grid-column:span 1 !important}
+  .foot-top{grid-template-columns:1fr;gap:32px;padding-bottom:32px}
+  .foot-brand{grid-column:span 1}
+  .foot-desc{max-width:100%}
+  .about-media .badge{position:static;margin-top:16px;display:inline-block}
+  .compare-table{font-size:13px}
+  .cta-banner{padding:80px 0}
+  .cta-inner p{font-size:15.5px}
+}
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  .h-display{font-size:clamp(30px,8vw,44px)}
+  .h-section{font-size:clamp(24px,6vw,32px)}
+  .hero{padding:48px 0 64px}
+  .hero-metrics{grid-template-columns:repeat(3,1fr) !important;gap:0;padding-top:20px}
+  .hero-metrics .m{padding:0 8px}
+  .hero-metrics .m+.m{padding-left:8px;border-left:1px solid var(--line-1);border-top:0;padding-top:0;margin-top:0}
+  .hero-metrics .n{font-size:22px}
+  .hero-metrics .n .u{font-size:11px}
+  .hero-metrics .l{font-size:10.5px;margin-top:4px;line-height:1.35}
+  .hero-cta{flex-direction:column;gap:10px}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .value-card{padding:28px 24px}
+  .method{padding:22px 18px}
+  .prod-body{padding:22px 22px 24px}
+  .app{aspect-ratio:4/3}
+  .app-body{padding:22px}
+  .app-body h3{font-size:20px}
+  .std{padding:24px 18px}
+  .std .code{font-size:22px}
+  .about-inner{gap:40px}
+  .about-quote{font-size:17px;padding:0 0 0 16px}
+  .cta-inner p{font-size:14.5px}
+  .cta-inner .row .btn{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -630,7 +714,9 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
         <span class="s">BIOENDO Korea · 한국 총판 대리점</span>
       </span>
     </a>
-    <nav class="pri" aria-label="주 메뉴">
+    <button class="menu-btn" id="mbtn" aria-label="메뉴" aria-expanded="false" onclick="toggleMenu()">
+<svg viewBox="0 0 24 24" aria-hidden="true"><line class="line top" x1="4" y1="7" x2="20" y2="7"/><line class="line mid" x1="4" y1="12" x2="20" y2="12"/><line class="line bot" x1="4" y1="17" x2="20" y2="17"/></svg>
+</button><nav class="pri" aria-label="주 메뉴">
       <ul>
         <li>
           <button type="button" aria-haspopup="true" aria-expanded="false" onclick="toggleMega(this)">제품</button>
@@ -662,7 +748,29 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
       </ul>
     </nav>
   </div>
-</header>
+</header><div class="drawer-backdrop" id="mbd" onclick="toggleMenu()"></div>
+<aside class="mobile-drawer" id="mdrw" aria-label="모바일 메뉴">
+<div class="mobile-drawer-head">
+<span class="brand">GLOBAL BIOTECH</span>
+<button class="mobile-drawer-close" onclick="toggleMenu()" aria-label="닫기">✕</button>
+</div>
+<div class="m-section">
+<h4>제품</h4>
+<a href="/product-kc.html">속도론적 비색법 (KC) <span class="m-desc">KC0828 · 8종 라인업</span></a>
+<a href="/product-kt.html">속도론적 비탁법 (KT) <span class="m-desc">KT17·KT52</span></a>
+<a href="/product-ec.html">종말점 비색법 (EC) <span class="m-desc">EC64405</span></a>
+<a href="/product-gc.html">겔화법 (Gel-clot) <span class="m-desc">GC 20종</span></a>
+<a href="/product-rfc.html">재조합 인자 C (rFC) <span class="m-desc">RFC96TS</span></a>
+<a href="/product-rcr.html">재조합 캐스케이드 (rCR) <span class="m-desc">RCR0428S</span></a>
+</div>
+<div class="m-section">
+<h4>회사</h4>
+<a href="/about.html">회사소개</a>
+<a href="#applications">응용분야</a>
+<a href="#insights">인사이트</a>
+</div>
+<a class="m-cta" href="/inquiry.html">견적 문의 →</a>
+</aside>
 
 <main id="main">
 
@@ -1217,6 +1325,13 @@ document.addEventListener('click', function(e){
   }, {threshold: .1, rootMargin: '0px 0px -6% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 })();
+
+function toggleMenu(){
+var b=document.getElementById('mbtn');var d=document.getElementById('mdrw');var bd=document.getElementById('mbd');
+var open=d.classList.contains('open');
+if(open){d.classList.remove('open');bd.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');document.body.classList.remove('nav-open')}
+else{d.classList.add('open');bd.classList.add('open');b.classList.add('open');b.setAttribute('aria-expanded','true');document.body.classList.add('nav-open')}
+}
 </script>
 
 </body>
