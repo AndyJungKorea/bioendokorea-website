@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문의 접수 완료 · BIOENDO Korea</title>
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap">
+<style>
+:root{--ink:#0A0F1E;--muted:#6B7690;--brand:#1E5AFF;--accent:#0EA5A5;--gold:#F4B740;--line:#E8ECF4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Pretendard","Inter","Noto Sans KR",sans-serif;color:var(--ink);
+  background:linear-gradient(180deg,#FFFFFF 0%,#FAFBFD 100%);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  -webkit-font-smoothing:antialiased}
+.card{max-width:560px;width:100%;text-align:center;padding:56px 40px;
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  box-shadow:0 20px 48px rgba(10,15,30,.08)}
+.mark{width:88px;height:88px;margin:0 auto 28px;
+  border-radius:22px;background:linear-gradient(135deg,var(--brand),var(--accent));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 32px rgba(30,90,255,.28)}
+.mark svg{width:44px;height:44px;stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+h1{font-family:Inter,sans-serif;font-weight:800;font-size:32px;letter-spacing:-.02em;margin-bottom:16px}
+p{color:var(--muted);font-size:16.5px;line-height:1.7;margin-bottom:32px}
+.info{padding:24px;background:#FAFBFD;border:1px solid var(--line);border-radius:14px;
+  text-align:left;font-size:14px;color:var(--muted);margin-bottom:32px}
+.info strong{color:var(--ink);display:block;margin-bottom:6px;font-size:13px;letter-spacing:.02em;text-transform:uppercase}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;
+  background:var(--ink);color:#fff;border-radius:12px;font-weight:600;
+  text-decoration:none;transition:transform .2s,background .2s;box-shadow:0 6px 16px rgba(10,15,30,.15)}
+.cta:hover{background:var(--brand);transform:translateY(-2px)}
+.cta::after{content:"→";transition:transform .18s}
+.cta:hover::after{transform:translateX(3px)}
+.contact{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--muted);line-height:1.7}
+.contact a{color:var(--brand);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+  </div>
+  <h1>문의가 접수되었습니다</h1>
+  <p>글로벌바이오테크 담당자가 확인 후 1영업일 이내에 회신드리겠습니다.</p>
+  <div class="info">
+    <strong>다음 절차</strong>
+    담당자가 요청하신 시험 방식·시료 특성·보유 장비를 확인한 뒤 최적의 시약 조합을 제안드립니다. 필요 시 평가용 시약 발송·현장 프로토콜 상담이 함께 진행됩니다.
+  </div>
+  <a class="cta" href="/">홈으로 돌아가기</a>
+  <div class="contact">
+    급한 문의는 아래로 연락 부탁드립니다.<br>
+    Tel. <a href="tel:0224064387">02-406-4387</a> &nbsp;|&nbsp; <a href="mailto:sales@chcrmkorea.com">sales@chcrmkorea.com</a>
+  </div>
+</div>
+</body>
+</html>
