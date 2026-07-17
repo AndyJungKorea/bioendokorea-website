@@ -123,7 +123,7 @@ footer .wrap{max-width:1360px}
           <tr><td>Type I (ASTM)</td><td>18.2 MΩ·cm, 5 ppb TOC</td><td>규정 없음</td><td>❌ 불가</td></tr>
           <tr><td>USP Purified Water</td><td>1.3 μS/cm, 500 ppb TOC</td><td>규정 없음</td><td>❌ 불가</td></tr>
           <tr><td>USP WFI</td><td>1.3 μS/cm, 500 ppb TOC</td><td>≤ 0.25 EU/mL</td><td>⚠ 대체 가능 (제한적)</td></tr>
-          <tr><td><strong>LRW</strong></td><td>USP &lt;85&gt; 요구</td><td><strong>≤ 0.005 EU/mL</strong></td><td>✅ 표준</td></tr>
+          <tr><td><strong>LRW</strong></td><td>USP &lt;85&gt; 요구</td><td><strong>&lt; 사용 lysate 감도(λ)</strong><br><span style="font-size:12.5px;color:var(--ink-4)">KC 표준 λ 0.005 → &lt; 0.005 EU/mL<br>Micro KC · rCR λ 0.001 → &lt; 0.001 EU/mL</span></td><td>✅ 표준</td></tr>
         </tbody>
       </table>
 
@@ -138,7 +138,13 @@ footer .wrap{max-width:1360px}
       <h2>LRW 생산 요건 (USP &lt;85&gt;)</h2>
       <p>LRW는 다음 조건 모두를 만족해야 합니다.</p>
       <ol>
-        <li>BET 시험에서 <strong>lysate 최소 감도(λ) 이하</strong>의 endotoxin (일반적으로 ≤ 0.005 EU/mL)</li>
+        <li>BET 시험에서 <strong>lysate 최소 감도(λ) 미만</strong>의 endotoxin
+          <ul style="margin-top:6px">
+            <li>KC 표준 감도 (λ = 0.005 EU/mL) → LRW &lt; 0.005 EU/mL</li>
+            <li>Micro KC · rCR (λ = 0.001 EU/mL) → LRW <strong>&lt; 0.001 EU/mL 요구</strong></li>
+            <li>Gel-clot (λ = 0.03 EU/mL) → LRW &lt; 0.03 EU/mL</li>
+          </ul>
+        </li>
         <li>Depyrogenation 처리: 250°C · 30분 (dry heat) 또는 검증된 filtration</li>
         <li>Autoclave 121°C · 30분 (혼합 방식일 경우)</li>
         <li>Depyrogenated 유리병에 밀봉 저장</li>
@@ -148,7 +154,7 @@ footer .wrap{max-width:1360px}
       <div class="callout">
         <strong>실무 원칙 6가지</strong>
         <ol style="margin:0 0 0 18px">
-          <li>BET 시험용 물은 반드시 <strong>LRW 등급 명시</strong>하여 발주</li>
+          <li>BET 시험용 물은 반드시 <strong>사용할 lysate 감도(λ) 확인 후 LRW 등급 지정</strong>하여 발주 (λ 0.001 시약 사용 시 반드시 Ultra-low LRW)</li>
           <li>Lot 별 CoA로 endotoxin 실측값 확인 후 사용</li>
           <li>개봉 후 <strong>2주 이내 소진</strong> 권장 (재오염 방지)</li>
           <li>희석·세척은 별도 LRW로 (같은 용기 재사용 금지)</li>
@@ -161,7 +167,13 @@ footer .wrap{max-width:1360px}
       <p>BIOENDO는 USP &lt;85&gt; 요구를 만족하는 LRW를 vial 단위로 공급합니다. Lot 별 endotoxin 실측값이 포함된 CoA가 원본으로 함께 배송됩니다.</p>
       <ul>
         <li><strong>TRW01 / TRW02 / TRW05</strong> — 5.5 mL vial, 100 mL, 500 mL 옵션</li>
-        <li>Endotoxin 함량: ≤ 0.005 EU/mL (Lot 별 실측 CoA)</li>
+        <li>Endotoxin 함량 등급 2종
+          <ul style="margin-top:6px">
+            <li><strong>Standard LRW</strong>: &lt; 0.005 EU/mL (KC 표준 · Gel-clot 등 대부분 시험)</li>
+            <li><strong>Ultra-low LRW</strong>: <strong>&lt; 0.001 EU/mL</strong> (Micro KC · rCR · 초저농도 시험)</li>
+          </ul>
+        </li>
+        <li>사용 시약 감도(λ)에 맞춰 등급 선택 · Lot 별 실측 CoA 원본 제공</li>
         <li>Depyrogenated 유리병 · 실온 24개월 안정성</li>
         <li>수분 손실 없이 밀봉 유지</li>
       </ul>
