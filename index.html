@@ -736,7 +736,116 @@ article.prod h3,article.app h3{transition:color .18s}
   .foot-col h4{font-size:13px}
   .foot-col a{font-size:12.5px;padding:4px 0}
 }
-article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(.card-link),article.app>*:not(.card-link){position:relative;z-index:1;pointer-events:none}article.prod .prod-body a:not(.card-link),article.app .app-body a:not(.card-link){pointer-events:auto}a.stack-card{cursor:pointer;-webkit-tap-highlight-color:rgba(30,90,255,.08);touch-action:manipulation;transition:transform .25s var(--ease-spring),box-shadow .25s}a.stack-card:hover{box-shadow:0 30px 60px rgba(10,15,30,.14)}a.stack-card:hover h4{color:var(--brand-1)}a.stack-card h4{transition:color .2s}</style>
+article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(.card-link),article.app>*:not(.card-link){position:relative;z-index:1;pointer-events:none}article.prod .prod-body a:not(.card-link),article.app .app-body a:not(.card-link){pointer-events:auto}a.stack-card{cursor:pointer;-webkit-tap-highlight-color:rgba(30,90,255,.08);touch-action:manipulation;transition:transform .25s var(--ease-spring),box-shadow .25s}a.stack-card:hover{box-shadow:0 30px 60px rgba(10,15,30,.14)}a.stack-card:hover h4{color:var(--brand-1)}a.stack-card h4{transition:color .2s}
+/* ══════════════════════════════════════════════════════════
+   MOBILE APP-LIKE UX · V6.4 · 2026-07-18
+   ══════════════════════════════════════════════════════════ */
+@media(max-width:940px){
+  /* Body: 하단 여백 (bottom nav + sticky CTA용) */
+  body{padding-bottom:120px}
+
+  /* ── Hero: 콤팩트 ── */
+  .hero{padding:20px 0 32px}
+  .hero-inner{grid-template-columns:1fr!important;gap:24px!important}
+  .hero .lead{font-size:15px;line-height:1.65}
+  .hero-badge{margin-bottom:14px}
+
+  /* ── Hero stack cards: 가로 스와이프 캐러셀 ── */
+  .hero-stack{
+    display:flex!important;flex-direction:row!important;
+    grid-template-columns:none!important;height:auto!important;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    gap:14px;padding:8px 4px 20px;margin:0 -18px;padding-left:18px;padding-right:18px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .hero-stack::-webkit-scrollbar{display:none}
+  a.stack-card{
+    scroll-snap-align:center;flex:0 0 82%!important;
+    position:static!important;transform:none!important;
+    padding:20px!important;border-radius:20px;
+    background:#fff;border:1px solid var(--line-1);
+    box-shadow:0 8px 24px rgba(10,15,30,.06);
+    display:flex!important;flex-direction:column;gap:12px
+  }
+  a.stack-card img{width:100%;height:auto;aspect-ratio:5/4;object-fit:contain;background:var(--bg-2);border-radius:12px;padding:12px}
+  a.stack-card h4{font-size:17px;margin:0}
+  a.stack-card .eb{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-1)}
+  a.stack-card .spec{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 0 0;border-top:1px solid var(--line-1)}
+  a.stack-card .spec .k{font-size:10.5px;color:var(--ink-4)}
+  a.stack-card .spec .v{font-size:12.5px;font-weight:700;color:var(--ink-1)}
+
+  /* ── Products: 가로 스와이프 캐러셀 ── */
+  .products-grid{
+    display:flex!important;grid-template-columns:none!important;
+    overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;
+    padding:8px 4px 20px;margin:0 -18px;padding-left:18px;padding-right:18px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none
+  }
+  .products-grid::-webkit-scrollbar{display:none}
+  article.prod{scroll-snap-align:center;flex:0 0 82%}
+
+  /* ── Applications: 세로 스택 유지 · 큰 카드 ── */
+  .apps-grid{grid-template-columns:1fr!important;gap:14px}
+  .app{aspect-ratio:16/10}
+
+  /* ── Insights: 세로 스택 큰 카드 ── */
+  .insights-grid{grid-template-columns:1fr!important;gap:14px}
+
+  /* ── Section spacing 콤팩트 ── */
+  section{padding:44px 0}
+  .section-head{margin-bottom:24px;text-align:left}
+
+  /* ── Compare table: 가로 스크롤 ── */
+  .compare{padding:44px 0}
+  .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -18px;padding:0 18px}
+  .compare-table{min-width:600px}
+
+  /* ── CTA banner 콤팩트 ── */
+  .cta-banner{padding:56px 0}
+  .cta-banner p{font-size:13.5px}
+
+  /* ── Sticky bottom CTA 버튼 ── */
+  .mobile-sticky-cta{
+    position:fixed;bottom:60px;left:16px;right:16px;z-index:900;
+    background:var(--brand-1);color:#fff!important;
+    padding:16px 20px;border-radius:14px;
+    font-weight:700;font-size:15px;text-align:center;text-decoration:none;
+    box-shadow:0 10px 30px rgba(30,90,255,.35);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    -webkit-tap-highlight-color:transparent;
+    animation:slideUp .3s ease-out
+  }
+  @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+  /* ── Bottom Nav Tab Bar (하단 고정) ── */
+  .mobile-tabbar{
+    position:fixed;bottom:0;left:0;right:0;z-index:800;
+    background:rgba(255,255,255,.98);backdrop-filter:blur(12px);
+    border-top:1px solid var(--line-1);
+    display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 20px rgba(10,15,30,.06)
+  }
+  .mobile-tabbar a{
+    flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
+    padding:6px 4px;text-decoration:none;color:var(--ink-4);
+    font-size:10.5px;font-weight:600;-webkit-tap-highlight-color:transparent;
+    transition:color .15s
+  }
+  .mobile-tabbar a svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .mobile-tabbar a.active,.mobile-tabbar a:active{color:var(--brand-1)}
+  .mobile-tabbar a.tel{color:var(--brand-1)}
+
+  /* ── Trust bar 콤팩트 ── */
+  .trust-bar{padding:16px 0}
+  .trust-bar-head{font-size:11.5px}
+  .trust-logos{flex-wrap:wrap;gap:8px;font-size:11px}
+}
+
+/* Desktop: sticky/tabbar 숨김 */
+@media(min-width:941px){
+  .mobile-sticky-cta,.mobile-tabbar{display:none!important}
+}
+</style>
 </head>
 <body>
 
