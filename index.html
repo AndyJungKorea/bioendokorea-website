@@ -384,7 +384,7 @@ section{padding:120px 0;}
 .products-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
 .prod{
   background:#fff; border:1px solid var(--line-1); border-radius:24px;
-  overflow:hidden; display:flex; flex-direction:column;
+  overflow:hidden; position:relative; cursor:pointer; display:flex; flex-direction:column;
   transition:transform .3s var(--ease-spring), box-shadow .3s, border-color .3s;
 }
 .prod:hover{transform:translateY(-8px); box-shadow:var(--s-4); border-color:var(--brand-3);}
@@ -437,7 +437,7 @@ section{padding:120px 0;}
 .apps{background:var(--bg-2);}
 .apps-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
 .app{
-  position:relative; border-radius:24px; overflow:hidden;
+  position:relative; border-radius:24px; overflow:hidden; cursor:pointer;
   aspect-ratio:16/10; background:var(--ink-1);
   transition:transform .3s var(--ease-spring), box-shadow .3s;
 }
@@ -693,7 +693,49 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
   .cta-inner p{font-size:14.5px}
   .cta-inner .row .btn{width:100%;justify-content:center}
 }
-.insights-grid a{cursor:pointer;transition:transform .18s,box-shadow .18s;display:block;border-radius:20px;}.insights-grid a:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(10,15,30,.1)}.insights-grid .post:hover h3{color:var(--brand-1)}.insights-grid h3{transition:color .15s}.prod-link,.app-link{cursor:pointer;-webkit-tap-highlight-color:rgba(30,90,255,.08);touch-action:manipulation;transition:transform .18s,box-shadow .18s}.prod-link:hover,.app-link:hover{transform:translateY(-4px)}.prod-link:hover .more,.app-link:hover .go{color:var(--brand-1)}article.prod:has(.prod-link:hover),article.app:has(.app-link:hover){box-shadow:0 20px 40px rgba(10,15,30,.1)}</style>
+.insights-grid a{cursor:pointer;transition:transform .18s,box-shadow .18s;display:block;border-radius:20px;}.insights-grid a:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(10,15,30,.1)}.insights-grid .post:hover h3{color:var(--brand-1)}.insights-grid h3{transition:color .15s}article.prod:has(.card-link{-webkit-tap-highlight-color:rgba(30,90,255,.08);touch-action:manipulation}
+article.prod:hover,article.app:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(10,15,30,.1)}
+article.prod:hover h3,article.app:hover h3{color:var(--brand-1)}
+article.prod h3,article.app h3{transition:color .18s}
+
+/* Mobile V6.3 · 카드 링크 오버레이 · 2026-07-18 */
+@media(max-width:940px){
+  article.prod,article.app{cursor:pointer}
+  .prod-thumb{aspect-ratio:5/3;padding:24px}
+  .prod-body{padding:20px 20px 22px}
+  .prod h3{font-size:19px}
+  .prod .code{font-size:12px;margin-bottom:10px}
+  .prod p{font-size:14px;margin-bottom:14px}
+  .prod .range{padding:10px 0;margin-bottom:12px;gap:12px}
+  .app{aspect-ratio:5/3}
+  .app-body{padding:20px}
+  .apps-grid{gap:16px}
+  .products-grid{gap:16px}
+  .insights-grid{gap:16px}
+  .post-thumb img{aspect-ratio:16/10;object-fit:cover;width:100%;display:block}
+  .post-body{padding:18px 20px 22px}
+  .post-body h3{font-size:16.5px;line-height:1.4;margin-bottom:8px}
+  .post-body p{font-size:13.5px;line-height:1.55}
+  .post-meta{font-size:11.5px}
+  .section-head{margin-bottom:32px;text-align:center}
+  .section-head .eyebrow{font-size:11px}
+  header .brand-txt .n{font-size:15px}
+  header{padding:0}
+  header .wrap{padding:10px 18px;gap:12px}
+  .announce{font-size:11px;padding:6px 12px}
+  .announce .flag{font-size:13px}
+  .hero{padding:36px 0 48px}
+  .hero-badge{font-size:11px;padding:5px 10px 5px 5px;margin-bottom:16px}
+  .hero .lead{font-size:14.5px;line-height:1.65;margin-bottom:22px}
+  .hero-metrics .n{font-size:20px}
+  .hero-metrics .l{font-size:10px}
+  .compare-table{font-size:12px}
+  .compare-table thead th,.compare-table tbody td{padding:10px 12px}
+  .foot-desc{font-size:13px;line-height:1.6}
+  .foot-col h4{font-size:13px}
+  .foot-col a{font-size:12.5px;padding:4px 0}
+}
+</style>
 </head>
 <body>
 
@@ -1011,7 +1053,7 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
       <p class="lead">5가지 시험 방식을 대표하는 시약. 시료 특성 · 보유 장비 · 예산에 맞춰 선택합니다.</p>
     </div>
     <div class="products-grid">
-      <article class="prod reveal"><a href="/product-kc.html" class="prod-link" style="display:block;text-decoration:none;color:inherit;">
+      <article class="prod reveal">
         <div class="prod-thumb"><img src="https://cdn.globalso.com/bioendo/10-KC0828.jpg" alt="KC0828" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-tag">Kinetic Chromogenic</span>
@@ -1021,8 +1063,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <div class="range"><div><div class="rng-k">범위</div><div class="rng-v">0.005–5 EU/mL</div></div><div><div class="rng-k">약전</div><div class="rng-v">USP · EP · KP · JP</div></div></div>
           <span class="more">상세 보기</span>
         </div>
-      </a></article>
-      <article class="prod reveal reveal-1"><a href="/product-kt.html" class="prod-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/product-kc.html" class="card-link" aria-label="상세 보기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="prod reveal reveal-1">
         <div class="prod-thumb"><img src="https://cdn.globalso.com/bioendo/fb3e80641.jpg" alt="KT" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-tag">Kinetic Turbidimetric</span>
@@ -1032,8 +1074,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <div class="range"><div><div class="rng-k">범위</div><div class="rng-v">0.005–10 EU/mL</div></div><div><div class="rng-k">약전</div><div class="rng-v">USP · EP · KP · JP</div></div></div>
           <span class="more">상세 보기</span>
         </div>
-      </a></article>
-      <article class="prod reveal reveal-2"><a href="/product-ec.html" class="prod-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/product-kt.html" class="card-link" aria-label="상세 보기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="prod reveal reveal-2">
         <div class="prod-thumb"><img src="https://cdn.globalso.com/bioendo/13.2-EC64405.jpg" alt="EC64405" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-tag">End-Point Chromogenic</span>
@@ -1043,8 +1085,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <div class="range"><div><div class="rng-k">범위</div><div class="rng-v">0.01–1 EU/mL</div></div><div><div class="rng-k">약전</div><div class="rng-v">USP · EP · KP · JP</div></div></div>
           <span class="more">상세 보기</span>
         </div>
-      </a></article>
-      <article class="prod reveal"><a href="/product-gc.html" class="prod-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/product-ec.html" class="card-link" aria-label="상세 보기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="prod reveal">
         <div class="prod-thumb"><img src="https://cdn.globalso.com/bioendo/8-GC0852.jpg" alt="GC" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-tag">Gel-clot Assay</span>
@@ -1054,8 +1096,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <div class="range"><div><div class="rng-k">감도(λ)</div><div class="rng-v">0.03–0.5 EU/mL</div></div><div><div class="rng-k">약전</div><div class="rng-v">USP · EP · KP · JP</div></div></div>
           <span class="more">상세 보기</span>
         </div>
-      </a></article>
-      <article class="prod reveal reveal-1"><a href="/product-rfc.html" class="prod-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/product-gc.html" class="card-link" aria-label="상세 보기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="prod reveal reveal-1">
         <div class="prod-thumb"><img src="https://cdn.globalso.com/bioendo/RFC96TS.jpg" alt="rFC" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-tag">Recombinant Factor C</span>
@@ -1065,8 +1107,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <div class="range"><div><div class="rng-k">범위</div><div class="rng-v">0.005–5 EU/mL</div></div><div><div class="rng-k">약전</div><div class="rng-v">USP &lt;86&gt; · EP 2.6.32</div></div></div>
           <span class="more">상세 보기</span>
         </div>
-      </a></article>
-      <article class="prod reveal reveal-2"><a href="/product-rcr.html" class="prod-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/product-rfc.html" class="card-link" aria-label="상세 보기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="prod reveal reveal-2">
         <div class="prod-thumb"><img src="https://cdn.globalso.com/bioendo/RCR0428S.jpg" alt="rCR" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-tag">Recombinant Cascade</span>
@@ -1076,7 +1118,7 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <div class="range"><div><div class="rng-k">최고 감도</div><div class="rng-v">0.001 EU/mL</div></div><div><div class="rng-k">약전</div><div class="rng-v">USP &lt;86&gt; · EP 2.6.32</div></div></div>
           <span class="more">상세 보기</span>
         </div>
-      </a></article>
+      <a href="/product-rcr.html" class="card-link" aria-label="상세 보기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
     </div>
   </div>
 </section>
@@ -1090,7 +1132,7 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
       <p class="lead">제약 QC · 임상 진단 · 세포치료 R&D · 주사용수 시스템에 이르는 실무 현장 전반.</p>
     </div>
     <div class="apps-grid">
-      <article class="app reveal"><a href="/inquiry.html" class="app-link" style="display:block;text-decoration:none;color:inherit;">
+      <article class="app reveal">
         <img src="https://cdn.globalso.com/bioendo/6b5c49db3.jpg" alt="제약 QC" loading="lazy">
         <div class="app-body">
           <span class="tag">Pharma QC</span>
@@ -1098,8 +1140,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <p>주사제 · 바이오시밀러 · 백신 · 원료의약품 · 완제품 BET. 겔화법 · 비색 · 비탁 · 재조합 전 방식.</p>
           <span class="go">문의하기</span>
         </div>
-      </a></article>
-      <article class="app reveal reveal-1"><a href="/inquiry.html" class="app-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/inquiry.html" class="card-link" aria-label="문의하기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="app reveal reveal-1">
         <img src="https://cdn.globalso.com/bioendo/6b5c49db1.jpg" alt="임상 진단" loading="lazy">
         <div class="app-body">
           <span class="tag">Clinical Diagnostics</span>
@@ -1107,8 +1149,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <p>(1→3)-β-D-Glucan · 엔도톡신 동시 검사. 침습성 진균 감염(IFI) · 중환자 · 면역저하 환자 모니터링.</p>
           <span class="go">문의하기</span>
         </div>
-      </a></article>
-      <article class="app reveal"><a href="/inquiry.html" class="app-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/inquiry.html" class="card-link" aria-label="문의하기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="app reveal">
         <img src="https://cdn.globalso.com/bioendo/6b5c49db2.jpg" alt="바이오 R&D" loading="lazy">
         <div class="app-body">
           <span class="tag">Bio R&D · CGT</span>
@@ -1116,8 +1158,8 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <p>CAR-T · AAV · 줄기세포 · CGT 원자재부터 완제품 릴리즈까지 9단계 QC 지점 대응.</p>
           <span class="go">문의하기</span>
         </div>
-      </a></article>
-      <article class="app reveal reveal-1"><a href="/inquiry.html" class="app-link" style="display:block;text-decoration:none;color:inherit;">
+      <a href="/inquiry.html" class="card-link" aria-label="문의하기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
+      <article class="app reveal reveal-1">
         <img src="https://cdn.globalso.com/bioendo/water-purifier.jpg" alt="주사용수" loading="lazy">
         <div class="app-body">
           <span class="tag">Water Systems</span>
@@ -1125,7 +1167,7 @@ svg.brand-mark { flex-shrink: 0; display: inline-block; vertical-align: middle; 
           <p>WFI · 투석수 · 혈액회로수 · Purified Water 시스템 QC. Rapid Gel Clot으로 15분 이내 판정.</p>
           <span class="go">문의하기</span>
         </div>
-      </a></article>
+      <a href="/inquiry.html" class="card-link" aria-label="문의하기" style="position:absolute;inset:0;z-index:5;text-indent:-9999px;overflow:hidden;"></a></article>
     </div>
   </div>
 </section>
