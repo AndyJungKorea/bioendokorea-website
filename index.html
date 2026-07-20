@@ -736,7 +736,7 @@ article.prod h3,article.app h3{transition:color .18s}
   .foot-col h4{font-size:13px}
   .foot-col a{font-size:12.5px;padding:4px 0}
 }
-article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(.card-link),article.app>*:not(.card-link){position:relative;z-index:1;pointer-events:none}article.prod .prod-body a:not(.card-link),article.app .app-body a:not(.card-link){pointer-events:auto}</style>
+article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(.card-link),article.app>*:not(.card-link){position:relative;z-index:1;pointer-events:none}article.prod .prod-body a:not(.card-link),article.app .app-body a:not(.card-link){pointer-events:auto}a.stack-card{cursor:pointer;-webkit-tap-highlight-color:rgba(30,90,255,.08);touch-action:manipulation;transition:transform .25s var(--ease-spring),box-shadow .25s}a.stack-card:hover{box-shadow:0 30px 60px rgba(10,15,30,.14)}a.stack-card:hover h4{color:var(--brand-1)}a.stack-card h4{transition:color .2s}</style>
 </head>
 <body>
 
@@ -858,7 +858,7 @@ article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(
 
     <aside class="hero-visual" aria-label="대표 제품">
       <div class="hero-stack">
-        <div class="stack-card stack-1">
+        <a class="stack-card stack-1" href="/product-kc.html" aria-label="KC0828 상세 페이지" style="display:block;text-decoration:none;color:inherit;">
           <div class="eb">Kinetic Chromogenic</div>
           <h4>Bioendo™ KC0828</h4>
           <img src="https://cdn.globalso.com/bioendo/10-KC0828.jpg" alt="KC0828 시약 대표 이미지" loading="lazy">
@@ -866,24 +866,21 @@ article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(
             <div><div class="k">검출 범위</div><div class="v">0.005–5 EU/mL</div></div>
             <div><div class="k">테스트 수</div><div class="v">208 tests</div></div>
           </div>
-        </div>
-        <div class="stack-card stack-2">
+        </a><a class="stack-card stack-2" href="/product-rfc.html" aria-label="rFC 상세 페이지" style="display:block;text-decoration:none;color:inherit;">
           <div class="eb">Recombinant Factor C</div>
           <h4>Bioendo™ rFC</h4>
           <img src="https://cdn.globalso.com/bioendo/RFC96TS.jpg" alt="rFC 시약 이미지" loading="lazy">
           <div class="spec">
             <div><div class="k">시험 방식</div><div class="v">형광 380/440 nm</div></div>
           </div>
-        </div>
-        <div class="stack-card stack-3">
+        </a><a class="stack-card stack-3" href="/product-rcr.html" aria-label="rCR 상세 페이지" style="display:block;text-decoration:none;color:inherit;">
           <div class="eb">Recombinant Cascade</div>
           <h4>Bioendo™ rCR</h4>
           <img src="https://cdn.globalso.com/bioendo/RCR0428S.jpg" alt="rCR 시약 이미지" loading="lazy">
           <div class="spec">
             <div><div class="k">최고 감도</div><div class="v">0.001 EU/mL</div></div>
           </div>
-        </div>
-      </div>
+        </a></div>
     </aside>
   </div>
 </section>
