@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://www.bioendokorea.com/insight-mvd-recovery">
+<title>MVD·스파이크 회수율 계산 실무 · Interference Test 통과 가이드 | BIOENDO Korea</title>
+<meta name="description" content="엔도톡신 시험에서 MVD(최대 유효 희석배수) 계산법과 스파이크 회수율(PPC) 50~200% 합격 실무. LER 매트릭스 대응 · 시약 결함 vs 매트릭스 간섭 진단.">
+<meta name="keywords" content="MVD, 최대 유효 희석, Maximum Valid Dilution, 스파이크 회수율, spike recovery, PPC, Positive Product Control, Interference test, 간섭 시험, LER, Low Endotoxin Recovery, 표준곡선, 검량선, 회수율 계산, CSE 조제, 엔도톡신 시험 방법, USP 85, USP 85 계산, KC0828 사용법, LER 대응, 시약 결함 진단, 세포치료 QC, 바이오엔도, BIOENDO Korea, 글로벌바이오테크">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVD·스파이크 회수율 계산 실무 · Interference Test 통과 가이드 | BIOENDO Korea">
+<meta property="og:description" content="엔도톡신 시험에서 MVD(최대 유효 희석배수) 계산법과 스파이크 회수율(PPC) 50~200% 합격 실무. LER 매트릭스 대응 · 시약 결함 vs 매트릭스 간섭 진단.">
+<meta property="og:url" content="https://www.bioendokorea.com/insight-mvd-recovery">
+<meta property="og:site_name" content="BIOENDO Korea">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"MVD·스파이크 회수율 계산 실무 · Interference Test 통과 가이드","description":"엔도톡신 시험에서 MVD(최대 유효 희석배수) 계산법과 스파이크 회수율(PPC) 50~200% 합격 실무. LER 매트릭스 대응 · 시약 결함 vs 매트릭스 간섭 진단.","author":{"@type":"Organization","name":"Global Biotech"},"publisher":{"@type":"Organization","name":"BIOENDO Korea"},"datePublished":"2026-08-15","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.bioendokorea.com/insight-mvd-recovery"},"inLanguage":"ko-KR"}
+</script>
+<style>
+:root{--ink-1:#0A0F1E;--ink-3:#3E4A66;--ink-4:#6B7690;--line-1:#E8ECF4;--bg-2:#FAFBFD;--bg-3:#F1F4F9;--brand-1:#1E5AFF;--accent-1:#0EA5A5;--accent-2:#F4B740;--success:#10B981}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',-apple-system,'Pretendard',sans-serif;color:var(--ink-1);line-height:1.7;background:#fff;-webkit-font-smoothing:antialiased;word-break:keep-all}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-1);z-index:100}
+header .wrap{max-width:1360px;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand svg{width:40px;height:40px}
+.brand-txt{display:flex;flex-direction:column;line-height:1.1}
+.brand-txt .n{font-family:Inter,sans-serif;font-weight:800;font-size:19px;letter-spacing:.02em;color:var(--brand-1)}
+.brand-txt .n .a{color:var(--accent-1)}
+.brand-txt .s{font-size:11.5px;color:var(--ink-4);margin-top:3px;letter-spacing:.02em}
+.nav{margin-left:auto;display:flex;align-items:center;gap:28px}
+.nav a{color:var(--ink-3);font-weight:500;font-size:15px;text-decoration:none;transition:color .15s}
+.nav a:hover{color:var(--brand-1)}
+.nav .cta{background:var(--ink-1);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600;font-size:14px}
+.nav .cta:hover{background:var(--brand-1);color:#fff}
+@media(max-width:940px){.nav a:not(.cta){display:none}.brand-txt .s{display:none}}
+article.insight{padding:60px 0 40px}
+.crumb{display:inline-flex;align-items:center;gap:6px;color:var(--brand-1);font-size:14px;font-weight:600;text-decoration:none;margin-bottom:24px}
+.crumb:hover{gap:10px}
+.meta{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:13px;color:var(--ink-4)}
+.meta .cat{background:var(--bg-3);color:var(--brand-1);padding:5px 12px;border-radius:20px;font-weight:700;font-size:11.5px;letter-spacing:.02em}
+h1{font-family:Inter,'Noto Sans KR',sans-serif;font-size:clamp(28px,4.5vw,42px);font-weight:800;line-height:1.25;letter-spacing:-.02em;margin-bottom:20px;color:var(--ink-1)}
+.lead{font-size:18px;color:var(--ink-3);line-height:1.7;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line-1)}
+.body h2{font-family:Inter,'Noto Sans KR',sans-serif;font-size:24px;font-weight:800;margin:44px 0 16px;color:var(--ink-1);line-height:1.3}
+.body h3{font-size:19px;font-weight:700;margin:32px 0 12px;color:var(--ink-1)}
+.body p{margin-bottom:16px;color:var(--ink-3);font-size:16.5px}
+.body ul,.body ol{margin:12px 0 20px 20px;color:var(--ink-3);font-size:16.5px}
+.body ul li,.body ol li{margin-bottom:8px}
+.body strong{color:var(--ink-1);font-weight:700}
+.body a{color:var(--brand-1);text-decoration:none;font-weight:600;border-bottom:1px solid transparent;transition:border .15s}
+.body a:hover{border-bottom-color:var(--brand-1)}
+.body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px}
+.body th{background:var(--bg-2);text-align:left;padding:12px;border:1px solid var(--line-1);font-weight:700;color:var(--ink-1)}
+.body td{padding:12px;border:1px solid var(--line-1);color:var(--ink-3);vertical-align:top}
+.callout{background:var(--bg-2);border-left:4px solid var(--brand-1);padding:20px 24px;margin:24px 0;border-radius:0 12px 12px 0;color:var(--ink-3);font-size:15.5px}
+.callout strong{display:block;color:var(--ink-1);margin-bottom:8px;font-size:16px}
+.related{margin-top:48px;padding-top:32px;border-top:1px solid var(--line-1)}
+.related h3{font-size:14px;font-weight:700;color:var(--ink-4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.related ul{list-style:none;margin:0}
+.related li{padding:12px 0;border-bottom:1px solid var(--line-1)}
+.related a{color:var(--brand-1);text-decoration:none;font-weight:600}
+.cta-banner{background:linear-gradient(135deg,#0A0F1E,#1A2338);color:#fff;padding:70px 0;text-align:center;margin-top:40px}
+.cta-banner .eyebrow{display:inline-block;padding:6px 14px;background:rgba(255,255,255,.1);color:var(--accent-2);border-radius:20px;font-size:11.5px;font-weight:700;letter-spacing:.08em;margin-bottom:20px}
+.cta-banner h2{font-family:Inter,'Noto Sans KR',sans-serif;font-size:36px;font-weight:800;margin-bottom:14px;letter-spacing:-.01em}
+.cta-banner p{color:#A4ADC2;font-size:17px;margin-bottom:28px}
+.cta-banner .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:all .15s}
+.btn-white{background:#fff;color:var(--ink-1)}.btn-white:hover{background:var(--accent-2)}
+.btn-outline-w{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-outline-w:hover{background:rgba(255,255,255,.08)}
+footer{background:#0A0F1E;color:#A4ADC2;padding:60px 0 30px;font-size:14px}
+footer .wrap{max-width:1360px}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand h4{color:#fff;font-family:Inter,sans-serif;font-size:20px;font-weight:800;margin-bottom:14px;letter-spacing:.02em}
+.foot-brand p{line-height:1.65;color:#A4ADC2;font-size:13.5px}
+.foot-col h5{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.foot-col a{display:block;color:#A4ADC2;text-decoration:none;padding:5px 0;font-size:14px;transition:color .15s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12.5px;color:#6B7690}
+@media(max-width:800px){.foot-top{grid-template-columns:1fr;gap:32px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" stroke="#1E5AFF" stroke-width="4" fill="#F1F4FA"/>
+        <circle cx="35" cy="42" r="8" fill="#1E5AFF"/>
+        <circle cx="65" cy="42" r="8" fill="#1E5AFF"/>
+        <circle cx="50" cy="65" r="8" fill="#0EA5A5"/>
+        <line x1="35" y1="42" x2="65" y2="42" stroke="#1E5AFF" stroke-width="2.5"/>
+        <line x1="35" y1="42" x2="50" y2="65" stroke="#0EA5A5" stroke-width="2.5"/>
+        <line x1="65" y1="42" x2="50" y2="65" stroke="#0EA5A5" stroke-width="2.5"/>
+      </svg>
+      <span class="brand-txt">
+        <span class="n">Global<span class="a">Biotech</span></span>
+        <span class="s">Endotoxin Testing &middot; Bioendo Korea</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="/#products">제품</a>
+      <a href="/about.html">회사소개</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#insights">인사이트</a>
+      <a href="/inquiry.html" class="cta">견적 문의 &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="insight">
+  <div class="wrap">
+    <a class="crumb" href="/#insights">&larr; 인사이트 목록</a>
+    <div class="meta">
+      <span class="cat">실무 가이드</span>
+      <time datetime="2026-08-15">2026.08.15</time>
+      <span>&middot; 8분 읽기</span>
+    </div>
+    <h1>MVD·스파이크 회수율 계산 실무 · Interference Test 통과 가이드</h1>
+    <p class="lead">MVD(최대 유효 희석배수) 계산 공식, 스파이크 회수율(PPC) 50~200% 판정 기준, LER 매트릭스 대응 순서, 시약 결함 vs 매트릭스 간섭 진단까지 실무 담당자용 완전 가이드.</p>
+    <div class="body">
+      <h2>MVD (Maximum Valid Dilution)란</h2>
+      <p>MVD는 <strong>시료의 최대 유효 희석배수</strong>입니다. 이 배수 이상으로 희석하면 실제 endotoxin이 시약의 감도(&lambda;) 아래로 내려가 검출 불능이 됩니다.</p>
+      <div class="callout">
+        <strong>MVD 계산 공식 (USP &lt;85&gt;)</strong>
+        MVD = (endotoxin 한계값 &times; 검체 농도) / &lambda;
+      </div>
+      <ul>
+        <li><strong>Endotoxin 한계값 (Limit)</strong>: 검체별 약전 규정치 (예: WFI = 0.25 EU/mL, 주사제 = 5 EU/kg &divide; 인체 최대 용량)</li>
+        <li><strong>검체 농도</strong>: 시료 원액 농도 (단위 일치 주의)</li>
+        <li><strong>&lambda;</strong>: 사용 시약의 label sensitivity (KC0828 = 0.005 EU/mL, Gel-clot = 0.03~0.5)</li>
+      </ul>
+      <h3>계산 예시</h3>
+      <p>WFI를 KC0828(&lambda; = 0.005 EU/mL)로 시험할 경우:</p>
+      <p><strong>MVD = 0.25 &times; 1 / 0.005 = 50배</strong></p>
+      <h2>스파이크 회수율(Positive Product Control &middot; PPC)</h2>
+      <p>USP &lt;85&gt; Section 8은 시료 매트릭스의 <strong>간섭 여부</strong>를 확인하기 위해 PPC(스파이크 시험)를 요구합니다.</p>
+      <div class="callout">
+        <strong>Spike Recovery 계산</strong>
+        Recovery (%) = (Observed spiked &minus; Observed unspiked) / Added spike &times; 100
+      </div>
+      <ul>
+        <li><strong>합격 기준</strong>: 50 &lt; Recovery &lt; 200 %</li>
+        <li>추천 스파이크 농도: <strong>0.5 EU/mL</strong> 또는 2&lambda; (Kinetic 계열)</li>
+        <li>각 희석 단계(원액 &middot; 1:10 &middot; 1:20 &middot; 1:40) 별 병행 시험 권장</li>
+      </ul>
+      <h3>계산 예시</h3>
+      <ul>
+        <li>Unspiked: 0.02 EU/mL</li>
+        <li>Spiked: 0.42 EU/mL</li>
+        <li>Recovery = (0.42 &minus; 0.02) / 0.5 &times; 100 = <strong>80 %</strong> &rarr; 합격</li>
+      </ul>
+      <h2>회수율 실패 시 대응 순서</h2>
+      <ol>
+        <li><strong>더 큰 희석으로 재시험</strong> (MVD 이내) &mdash; 매트릭스 간섭 완화로 회수율 회복</li>
+        <li><strong>시약 방식 변경</strong> &mdash; End-point &rarr; Kinetic Chromogenic(<a href="/product-kc.html">KC0828 &lambda; 0.005</a>)이 간섭 완충 우수</li>
+        <li><strong>재조합 시약 전환</strong> &mdash; &beta;-glucan 간섭이면 <a href="/product-rfc.html">rFC (RFC96TS)</a> &middot; <a href="/product-rcr.html">rCR</a>로 완전 회피</li>
+        <li><strong>시료 전처리</strong> &mdash; pH 조정(Tris) &middot; EDTA 킬레이터 제거 &middot; 계면활성제 최적화</li>
+        <li><strong>BIOENDO LER Solution Kit</strong> &mdash; 강한 LER 매트릭스 (세포치료 등) 전용</li>
+      </ol>
+      <h2>LER (Low Endotoxin Recovery) 매트릭스 실제 사례</h2>
+      <p>세포치료 원자재&middot;단백질 제형&middot;계면활성제 함유 시료는 <strong>회수율이 원액에서 &lt;25%</strong>로 나오는 경우가 흔합니다.</p>
+      <table>
+        <thead><tr><th>희석</th><th>일반 시료</th><th>LER 매트릭스</th><th>대응</th></tr></thead>
+        <tbody>
+          <tr><td>원액</td><td>80~120%</td><td>0~30%</td><td>재시험 (희석)</td></tr>
+          <tr><td>1:10</td><td>90~110%</td><td>1~10%</td><td>희석 &uarr;</td></tr>
+          <tr><td>1:20</td><td>95~105%</td><td>8~50%</td><td>희석 &uarr;</td></tr>
+          <tr><td>1:40</td><td>&mdash;</td><td>50~130% &rarr; 합격</td><td>&#10004;</td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>회수율 실패 진단 팁</strong>
+        원액과 희석 단계 모두 회수율이 처참하다면 <strong>시약 결함이 아니라 시료 매트릭스 간섭</strong>입니다. 검량선 R² &ge; 0.980으로 정상이면 시약은 무죄. 시약 방식 변경(KC0828 &rarr; rFC) 또는 LER 전처리를 검토하세요.
+      </div>
+    </div>
+    <div class="related">
+      <h3>관련 자료</h3>
+      <ul>
+        <li><a href="/product-kc.html">KC0828 &middot; Kinetic Chromogenic (LER 대응)</a></li>
+        <li><a href="/product-rfc.html">RFC96TS &middot; β-glucan 간섭 완전 회피</a></li>
+        <li><a href="/insight-lrw-water.html">LRW vs 초순수 &middot; 시약수 등급</a></li>
+        <li><a href="/faq.html">FAQ &middot; 표준곡선&middot;CSE 조제&middot;인큐베이션</a></li>
+        <li><a href="/inquiry.html">간섭 시험 상담 &middot; LER 솔루션 문의</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <span class="eyebrow">Get Started</span>
+    <h2>간섭 시험 · LER 대응 상담</h2>
+    <p>시료 매트릭스 · 시험 방식 · 회수율 실패 데이터를 공유해 주시면 담당자가 원인 진단과 대안 시약을 회신드립니다.</p>
+    <div class="row">
+      <a class="btn btn-white" href="/inquiry.html">견적&middot;평가샘플 요청</a>
+      <a class="btn btn-outline-w" href="tel:0224064387">02-406-4387</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <h4>GLOBAL BIOTECH</h4>
+        <p>BIOENDO 엔도톡신 시약의 한국 총판 대리점.<br>USP &middot; EP &middot; KP &middot; JP 규격 준수 &middot; CoA &middot; MSDS &middot; package insert 제공.</p>
+        <p style="margin-top:14px;font-size:12.5px;color:#6B7690;line-height:1.75;">경기도 성남시 중원구 갈마치로288번길 14,<br>SK V1 Tower A동 1407호 (상대원동)<br>Tel. 02-406-4387 &nbsp;|&nbsp; Cell. 010-4253-4387<br>Fax. 031-601-9381 &nbsp;|&nbsp; sales@chcrmkorea.com</p>
+      </div>
+      <div class="foot-col">
+        <h5>제품</h5>
+        <a href="/product-kc.html">KC0828</a>
+        <a href="/product-kt.html">KT 시리즈</a>
+        <a href="/product-ec.html">EC64405</a>
+        <a href="/product-gc.html">Gel-clot</a>
+        <a href="/product-rfc.html">rFC</a>
+        <a href="/product-rcr.html">rCR</a>
+      </div>
+      <div class="foot-col">
+        <h5>회사</h5>
+        <a href="/about.html">회사소개</a>
+        <a href="/#applications">응용분야</a>
+        <a href="/#insights">인사이트</a>
+        <a href="/inquiry.html">견적 문의</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Global Biotech Co., Ltd. &middot; BIOENDO Korea</span>
+      <span>상호 글로벌바이오테크 &middot; 대표 정기운 &middot; 사업자등록번호 660-30-00866</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
