@@ -1,0 +1,21 @@
+[Unit]
+Description=BIOENDO CoA lookup service
+After=network.target
+
+[Service]
+Type=simple
+User=coaapp
+Group=coaapp
+WorkingDirectory=/opt/bioendo-coa/app
+EnvironmentFile=/etc/bioendo-coa.env
+ExecStart=/opt/bioendo-coa/venv/bin/gunicorn --workers 2 --threads 4 --bind 127.0.0.1:5194 --timeout 60 coa_app:app
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/bioendo-coa/data
+
+[Install]
+WantedBy=multi-user.target

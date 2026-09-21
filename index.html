@@ -546,6 +546,16 @@ section{padding:120px 0;}
 .cta-inner p{color:#B0BCD8; font-size:18px; line-height:1.65; margin-bottom:36px;}
 .cta-inner .row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
 
+/* ══════════════════════════════════ CoA lookup */
+.coa-home{padding:88px 0;background:linear-gradient(135deg,#F4F7FC 0%,#EEF4FF 100%)}
+.coa-home-card{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--line-1);border-radius:24px;padding:48px;box-shadow:0 18px 50px rgba(10,15,30,.08)}
+.coa-home h2{font-size:clamp(28px,3vw,40px);line-height:1.25;margin:8px 0 14px;color:var(--ink-1)}
+.coa-home p{color:var(--ink-3);margin:0;max-width:650px}
+.coa-home-points{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.coa-home-points li{padding:15px 16px;border:1px solid var(--line-1);border-radius:12px;color:var(--ink-2);font-weight:600;background:var(--bg-2)}
+.coa-home-points strong{color:var(--brand-1)}
+@media(max-width:800px){.coa-home{padding:58px 0}.coa-home-card{grid-template-columns:1fr;padding:30px 24px;gap:28px}}
+
 /* ══════════════════════════════════ Footer */
 footer{background:var(--ink-1); color:#B0BCD8; padding:80px 0 32px;}
 .foot-top{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:48px;
@@ -904,6 +914,7 @@ article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(
         </li>
         <li><a href="/about.html">회사소개</a></li>
         <li><a href="#insights">인사이트</a></li>
+        <li><a href="/coa.html">성적서(CoA)</a></li>
             <li><a href="/faq.html">FAQ</a></li>
         <li><a href="/inquiry.html" class="h-cta">견적 문의</a></li>
       </ul>
@@ -930,6 +941,7 @@ article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(
 <a href="/about.html" onclick="closeMenu()">회사소개</a>
 <a href="/#applications" onclick="closeMenu()">응용분야</a>
 <a href="/#insights" onclick="closeMenu()">인사이트</a>
+<a href="/coa.html" onclick="closeMenu()">성적서(CoA)</a>
 </div>
 <a class="m-cta" href="/inquiry.html">견적 문의 →</a>
 </aside>
@@ -1406,6 +1418,27 @@ article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(
   </div>
 </section>
 
+<!-- ══════ CoA lookup ══════ -->
+<section class="coa-home" aria-labelledby="coa-home-h">
+  <div class="wrap">
+    <div class="coa-home-card">
+      <div>
+        <span class="eyebrow">Certificate of Analysis</span>
+        <h2 id="coa-home-h">Lot 번호로 성적서를 조회합니다.</h2>
+        <p>BIOENDO 제품 또는 바이알 라벨의 Lot 번호를 입력하면 연결된 CoA 원본을 모두 확인할 수 있습니다.</p>
+        <div class="hero-cta" style="margin-top:26px;">
+          <a class="btn btn-primary" href="/coa.html">성적서(CoA) 조회</a>
+        </div>
+      </div>
+      <ul class="coa-home-points">
+        <li><strong>Lot 번호</strong> 매칭 파일 표시</li>
+        <li><strong>복합 성적서</strong> 관련 문서 함께 표시</li>
+        <li><strong>원본 형식</strong> PDF·이미지 다운로드</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ══════ CTA banner ══════ -->
 <section class="cta-banner" aria-labelledby="cta-h">
   <div class="wrap cta-inner">
@@ -1469,6 +1502,7 @@ article.prod,article.app{position:relative;isolation:isolate}article.prod>*:not(
         <h4>회사·연락</h4>
         <ul>
           <li><a href="/about.html">회사소개</a></li>
+          <li><a href="/coa.html">성적서(CoA) 조회</a></li>
           <li><a href="/inquiry.html">견적 · 평가용 요청</a></li>
           <li><a href="https://www.bioendo.com/" target="_blank" rel="noopener">BIOENDO 공식 홈 ↗</a></li>
           <li><a href="#insights">인사이트</a></li>

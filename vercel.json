@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {"source": "/api/coa/:path*", "destination": "https://srv1984161.hstgr.cloud/coa-api/:path*"}
+  ],
   "headers": [
     {"source": "/(.*)", "headers": [
       {"key": "X-Content-Type-Options", "value": "nosniff"},
@@ -8,6 +11,11 @@
       {"key": "Permissions-Policy", "value": "camera=(), microphone=()"}
     ]},
     {"source": "/images/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
-    {"source": "/css/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=604800"}]}
+    {"source": "/css/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=604800"}]},
+    {"source": "/coa-admin", "headers": [
+      {"key": "Cache-Control", "value": "private, no-store"},
+      {"key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive"}
+    ]},
+    {"source": "/api/coa/(.*)", "headers": [{"key": "Cache-Control", "value": "no-store"}]}
   ]
 }

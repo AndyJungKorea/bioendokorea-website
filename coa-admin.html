@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>CoA 서버 등록 | BIOENDO Korea</title>
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<style>
+:root{--navy:#0A1F3D;--blue:#1F4E9C;--line:#DDE5F0;--bg:#F5F7FB;--ink:#1B2432;--muted:#5D6878}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:"Noto Sans KR","Malgun Gothic",sans-serif;color:var(--ink)}
+.wrap{width:min(720px,calc(100% - 32px));margin:48px auto}.head{display:flex;align-items:center;gap:14px;margin-bottom:24px}.head img{width:48px;height:48px;object-fit:contain}.head h1{font-size:24px;margin:0}.head p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 14px 38px rgba(10,31,61,.08)}
+.notice{padding:14px 16px;border-radius:10px;background:#FFF6DF;color:#6D4D00;font-size:13px;line-height:1.6;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}.full{grid-column:1/-1}label{display:block;font-size:13px;font-weight:700;margin-bottom:7px}input,textarea{width:100%;min-height:48px;border:1px solid #C9D4E3;border-radius:9px;padding:10px 12px;font:inherit;background:#fff}textarea{min-height:92px;resize:vertical}input:focus,textarea:focus{outline:3px solid rgba(31,78,156,.16);border-color:var(--blue)}
+button{width:100%;min-height:52px;border:0;border-radius:10px;background:var(--blue);color:#fff;font-size:15px;font-weight:800;margin-top:24px;cursor:pointer}button:disabled{opacity:.55;cursor:wait}
+#status{display:none;margin-top:18px;padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.6}#status.show{display:block}#status.ok{background:#E8F7F0;color:#126A4E}#status.err{background:#FFF0F0;color:#9A2525}
+.foot{margin-top:18px;color:var(--muted);font-size:12px;line-height:1.6}@media(max-width:620px){.wrap{margin:24px auto}.card{padding:22px}.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="head"><img src="/images/logo-gb-mark.png" alt="글로벌바이오테크"><div><h1>CoA 서버 등록</h1><p>내부 관리자 전용 · 공개 페이지에서 연결하지 않음</p></div></div>
+  <section class="card" aria-labelledby="admin-title">
+    <div class="notice">같은 Lot 번호에도 여러 성적서를 연결할 수 있습니다. 완전히 동일한 파일은 SHA-256 기준으로 중복 저장하지 않으며, 기존 자료의 수정·교체는 서버 기록을 확인한 뒤 별도 절차로 처리합니다.</div>
+    <form id="uploadForm">
+      <div class="grid">
+        <div class="full"><label for="token">관리자 토큰</label><input id="token" type="password" autocomplete="off" required></div>
+        <div class="full"><label for="lots">Lot 번호</label><textarea id="lots" placeholder="한 개 또는 여러 개를 쉼표나 줄바꿈으로 입력&#10;예: 26024111, 25125249" maxlength="1000" required></textarea></div>
+        <div><label for="sourceBatch">등록 묶음</label><input id="sourceBatch" value="manual" maxlength="120" required></div>
+        <div><label for="file">CoA 원본</label><input id="file" type="file" accept="application/pdf,image/png,image/jpeg,.pdf,.png,.jpg,.jpeg" required></div>
+      </div>
+      <button id="submitBtn" type="submit">서버에 등록</button>
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+    <p class="foot">토큰은 브라우저에 저장하지 않습니다. PDF·PNG·JPG는 20MB 이하만 등록되며, 서버는 파일 서명과 SHA-256 중복 여부를 다시 확인합니다.</p>
+  </section>
+</main>
+<script>
+const form=document.getElementById('uploadForm');const statusBox=document.getElementById('status');const submitBtn=document.getElementById('submitBtn');
+function showStatus(message,ok=false){statusBox.textContent=message;statusBox.className=`show ${ok?'ok':'err'}`}
+form.addEventListener('submit',async(event)=>{event.preventDefault();const file=document.getElementById('file').files[0];if(!file)return showStatus('성적서 파일을 선택해 주세요.');if(file.size>20*1024*1024)return showStatus('파일은 20MB 이하만 등록할 수 있습니다.');submitBtn.disabled=true;showStatus('서버에 등록하고 있습니다.',true);const body=new FormData();body.append('file',file);body.append('lots',document.getElementById('lots').value);body.append('sourceBatch',document.getElementById('sourceBatch').value);
+  try{const response=await fetch('/api/coa/admin/upload',{method:'POST',headers:{'X-CoA-Admin-Token':document.getElementById('token').value},body});const data=await response.json();if(!response.ok)throw new Error(data.message||'등록에 실패했습니다.');showStatus(`${data.document.name} · Lot ${data.document.lots.join(', ')} 등록 완료`,true);form.reset()}catch(error){showStatus(error.message||'등록 중 오류가 발생했습니다.')}finally{submitBtn.disabled=false}
+});
+</script>
+</body>
+</html>
