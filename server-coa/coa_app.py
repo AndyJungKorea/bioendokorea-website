@@ -252,6 +252,10 @@ def admin_upload():
         document_id = connection.execute(
             "SELECT id FROM documents WHERE sha256 = ?", (digest,)
         ).fetchone()[0]
+        canonical_document = connection.execute(
+            "SELECT original_name, size_bytes FROM documents WHERE id = ?",
+            (document_id,),
+        ).fetchone()
         for lot in lots:
             connection.execute(
                 "INSERT OR IGNORE INTO lot_aliases (lot_norm, lot_display, document_id) VALUES (?, ?, ?)",
@@ -282,11 +286,11 @@ def admin_upload():
     return jsonify(
         ok=True,
         document={
-            "name": original_name,
+            "name": canonical_document["original_name"],
             "lots": lots,
             "verifiedLots": verified_lots,
             "sha256": digest,
-            "size": len(data),
+            "size": canonical_document["size_bytes"],
         },
     ), 201
 

@@ -48,6 +48,22 @@ class CoaApiUploadTest(unittest.TestCase):
                 )
             )
 
+        duplicate = self.client.post(
+            "/admin/upload",
+            headers={"X-CoA-Admin-Token": "test-admin-token"},
+            data={
+                "lots": "26030135",
+                "sourceBatch": "automated-deduplication-test",
+                "file": (io.BytesIO(b"%PDF-1.4\n%%EOF\n"), "renamed-copy.pdf"),
+            },
+            content_type="multipart/form-data",
+        )
+        self.assertEqual(duplicate.status_code, 201)
+        self.assertEqual(duplicate.json["document"]["name"], "verified-coa.pdf")
+        duplicate_lookup = self.client.get("/lookup?lot=26030135")
+        self.assertEqual(duplicate_lookup.status_code, 200)
+        self.assertEqual(duplicate_lookup.json["documents"][0]["name"], "verified-coa.pdf")
+
 
 if __name__ == "__main__":
     unittest.main()
