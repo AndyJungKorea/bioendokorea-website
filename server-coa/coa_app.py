@@ -6,6 +6,7 @@ import re
 import secrets
 import sqlite3
 import time
+from contextlib import contextmanager
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_file
@@ -34,10 +35,23 @@ def get_db():
     return connection
 
 
+@contextmanager
+def database():
+    connection = get_db()
+    try:
+        yield connection
+        connection.commit()
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        connection.close()
+
+
 def initialize_database():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     FILES_DIR.mkdir(parents=True, exist_ok=True)
-    with get_db() as connection:
+    with database() as connection:
         connection.executescript(
             """
             CREATE TABLE IF NOT EXISTS documents (
@@ -110,7 +124,7 @@ def file_signature_is_valid(data, extension):
 
 @app.get("/health")
 def health():
-    with get_db() as connection:
+    with database() as connection:
         document_count = connection.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
         lot_count = connection.execute("SELECT COUNT(DISTINCT lot_norm) FROM lot_aliases").fetchone()[0]
     return jsonify(ok=True, documents=document_count, lots=lot_count)
@@ -122,7 +136,7 @@ def lookup():
     if not LOT_PATTERN.fullmatch(lot):
         return jsonify(ok=False, code="invalid_lot", message="Lot 번호를 확인해 주세요."), 400
 
-    with get_db() as connection:
+    with database() as connection:
         rows = connection.execute(
             """
             SELECT d.id, d.original_name, d.content_type, d.size_bytes, d.uploaded_at
@@ -165,7 +179,7 @@ def download(document_id):
     if not received_signature or not secrets.compare_digest(received_signature, expected_signature):
         return "다운로드 인증에 실패했습니다.", 403
 
-    with get_db() as connection:
+    with database() as connection:
         row = connection.execute(
             "SELECT stored_name, original_name, content_type FROM documents WHERE id = ?",
             (document_id,),
@@ -226,7 +240,7 @@ def admin_upload():
         temporary.write_bytes(data)
         temporary.replace(target)
 
-    with get_db() as connection:
+    with database() as connection:
         connection.execute(
             """
             INSERT OR IGNORE INTO documents
@@ -243,10 +257,37 @@ def admin_upload():
                 "INSERT OR IGNORE INTO lot_aliases (lot_norm, lot_display, document_id) VALUES (?, ?, ?)",
                 (lot, lot, document_id),
             )
+        verified_lots = [
+            lot
+            for lot in lots
+            if connection.execute(
+                "SELECT 1 FROM lot_aliases WHERE lot_norm = ? AND document_id = ?",
+                (lot, document_id),
+            ).fetchone()
+        ]
+
+    if verified_lots != lots:
+        app.logger.error(
+            "COA_LOT_VERIFY_FAILED document_id=%s expected=%s verified=%s",
+            document_id,
+            lots,
+            verified_lots,
+        )
+        return jsonify(
+            ok=False,
+            code="lot_verify_failed",
+            message="파일은 저장됐지만 Lot 조회 연결 검증에 실패했습니다.",
+        ), 500
 
     return jsonify(
         ok=True,
-        document={"name": original_name, "lots": lots, "sha256": digest, "size": len(data)},
+        document={
+            "name": original_name,
+            "lots": lots,
+            "verifiedLots": verified_lots,
+            "sha256": digest,
+            "size": len(data),
+        },
     ), 201
 
 

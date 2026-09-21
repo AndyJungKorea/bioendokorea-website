@@ -27,4 +27,6 @@ The service has no document-list endpoint. Download URLs are HMAC-signed and exp
 
 `import_coa_zip.py` indexes every eight-digit Lot in a filename. If no eight-digit Lot exists, it accepts a separated four-digit Lot such as `2512`. Product numbers adjacent to letters are not treated as Lot numbers. Paths containing `MSDS` are excluded from the CoA index.
 
-Before importing a new archive, run `test_import.py`, keep the original archive, review `import-report.csv`, and verify an exact lookup plus a multi-document lookup.
+Before importing a new archive, run `test_import.py` and `test_api.py`, keep the original archive, review `import-report.csv`, and verify an exact lookup plus a multi-document lookup.
+
+The administrator screen requires one or more Lot numbers. After upload, the API verifies the database aliases and the screen re-runs each Lot through the public lookup endpoint. It reports completion only when the uploaded file appears in every lookup result.
